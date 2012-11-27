@@ -5,7 +5,17 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="oknoway_mac"
+
+#ZSH theme by platform
+case 'uname' in
+    Darwin)
+        ZSH_THEME="oknoway_mac"
+        ;;
+    Linux)
+        ZSH_THEME="oknoway"
+        ;;
+esac
+
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
