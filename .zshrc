@@ -10,8 +10,18 @@ ZSH_THEME="oknoway_mac"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias update="sudo aptitude update"
-alias upgrade="sudo aptitude upgrade"
+
+
+case 'uname' in
+    Darwin)
+        alias stink='say "you stink"'
+        ;;
+    Linux)
+        alias update='sudo aptitude update'
+        alias upgrade='sudo aptitude upgrade'
+        ;;
+esac
+
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -73,14 +83,14 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 
-source `brew --prefix git`/etc/bash_completion.d/git-completion.bash
+#source `brew --prefix git`/etc/bash_completion.d/git-completion.bash
 
 export CODAPATH="/Users/nateb/Applications/Coda 2.app:"
 export SVN_EDITOR="subl"
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages
-export GEM_HOME=/usr/local/Cellar/ruby/1.9.3-p0/lib/ruby/gems/1.9.1
-export GEM_PATH=/usr/local/Cellar/ruby/1.9.3-p0/lib/ruby/gems/1.9.1
+export GEM_HOME=/usr/local/Cellar/ruby/1.9.3-p327/lib/ruby/gems/1.9.1
+export GEM_PATH=/usr/local/Cellar/ruby/1.9.3-p327/lib/ruby/gems/1.9.1
 export NODE_PATH=/usr/local/lib/node_modules
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/include:/usr/local/mysql/bin:/usr/local/lib/node_modules:/usr/local/Cellar/ruby/1.9.3-p0/bin:/usr/local/Cellar/ruby/1.9.3-p125/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/include:/usr/local/mysql/bin:/usr/local/lib/node_modules:/usr/local/Cellar/ruby/1.9.3-p327/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin
