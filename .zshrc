@@ -5,26 +5,19 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-
-#ZSH theme by platform
-case 'uname' in
-    Darwin)
-        ZSH_THEME="oknoway_mac"
-        ;;
-    Linux)
-        ZSH_THEME="oknoway"
-        ;;
-esac
-
+ZSH_THEME="oknoway"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias scp="noglob scp"
+
+alias fixopenwith="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user"
 
 case 'uname' in
     Darwin)
-        alias stink='say "you stink"'
+        alias stink="say 'you stink'"
         ;;
     Linux)
         alias update='sudo aptitude update'
@@ -32,6 +25,9 @@ case 'uname' in
         ;;
 esac
 
+cdf() {
+    cd "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`"
+}
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -51,7 +47,7 @@ esac
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git mercurial autojump python pip github gnu-utils history-substring-search osx sublime terminalapp cloudapp)
+plugins=(autojump bower emoji-clock git github gnu-utils history history-substring-search npm osx pip python sublime terminalapp vagrant zsh-syntax-highlighting)
 
 # http://superuser.com/questions/313650/resume-zsh-terminal-os-x-lion/315029#answer-328148
 # Tell the terminal about the working directory whenever it changes.
@@ -95,12 +91,14 @@ source $ZSH/oh-my-zsh.sh
 
 #source `brew --prefix git`/etc/bash_completion.d/git-completion.bash
 
-export CODAPATH="/Users/nateb/Applications/Coda 2.app:"
+export CODAPATH="/Users/nateb/Applications/Coda\ 2.app:"
 export SVN_EDITOR="subl"
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages
-export GEM_HOME=/usr/local/Cellar/ruby/1.9.3-p327/lib/ruby/gems/1.9.1
-export GEM_PATH=/usr/local/Cellar/ruby/1.9.3-p327/lib/ruby/gems/1.9.1
+#export GEM_HOME=/usr/local/Cellar/ruby/1.9.3-p374/lib/ruby/gems/1.9.1
+#export GEM_PATH=/usr/local/Cellar/ruby/1.9.3-p374/lib/ruby/gems/1.9.1
 export NODE_PATH=/usr/local/lib/node_modules
+export GISTY_DIR="$HOME/Documents/Source/gists"
+export GISTY_ACCESS_TOKEN=103b1666516255e4254b679cc977331fb89717e4
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/include:/usr/local/mysql/bin:/usr/local/lib/node_modules:/usr/local/Cellar/ruby/1.9.3-p327/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/include:/usr/local/mysql/bin:/usr/local/lib/node_modules:/usr/local/share/npm/bin:$HOME/.rvm/bin:/usr/local/opt/ruby/bin:/usr/local/Cellar/ruby/1.9.3-p374/bin:/usr/local/opt/ruby/lib/ruby/gems/1.9.1/bin:/usr/local/share/python:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:$PATH

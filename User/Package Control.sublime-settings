@@ -1,0 +1,35 @@
+{
+	"auto_upgrade_last_run": null,
+	"installed_packages":
+	[
+		"AdvancedNewFile",
+		"Alignment",
+		"All Autocomplete",
+		"BracketHighlighter",
+		"BufferScroll",
+		"Color Scheme - Frontend Delight",
+		"CSScomb",
+		"CSSLint",
+		"DetectSyntax",
+		"DocBlockr",
+		"Dotfiles Syntax Highlighting",
+		"GitGutter",
+		"HtmlTidy",
+		"HyperlinkHelper",
+		"IndentGuides",
+		"Modific",
+		"Package Control",
+		"Search WordPress Codex",
+		"SearchInProject",
+		"SideBarEnhancements",
+		"STProjectMaker",
+		"SublimeBlockCursor",
+		"SublimeLinter",
+		"Surround",
+		"Terminal",
+		"Theme - Soda",
+		"TrailingSpaces",
+		"Web Inspector",
+		"WordCount"
+	]
+}
