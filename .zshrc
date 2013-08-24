@@ -109,7 +109,7 @@ source $ZSH/oh-my-zsh.sh
 # WP-CLI Bash completion
 autoload bashcompinit
 bashcompinit
-source $HOME/.composer/vendor/wp-cli/wp-cli/utils/wp-completion.bash
+source $HOME/.wp-cli/vendor/wp-cli/wp-cli/utils/wp-completion.bash
 
 #source `brew --prefix git`/etc/bash_completion.d/git-completion.bash
 
