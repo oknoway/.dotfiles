@@ -12,6 +12,9 @@ ZSH_THEME="oknoway"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias scp="noglob scp"
+alias bower="noglob bower"
+alias npm="noglob npm"
+alias sass="noglob sass"
 
 alias fixopenwith="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user"
 
@@ -42,12 +45,26 @@ cdf() {
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(autojump bower emoji-clock git github gnu-utils history history-substring-search npm osx pip python sublime terminalapp vagrant zsh-syntax-highlighting)
+
+export MARKPATH=$HOME/.marks
+function jump {
+    cd -P $MARKPATH/$1 2>/dev/null || echo "No such mark: $1"
+}
+function mark {
+    mkdir -p $MARKPATH; ln -s $(pwd) $MARKPATH/$1
+}
+function unmark {
+    rm -i $MARKPATH/$1
+}
+function marks {
+    ls -l $MARKPATH | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
+}
 
 # http://superuser.com/questions/313650/resume-zsh-terminal-os-x-lion/315029#answer-328148
 # Tell the terminal about the working directory whenever it changes.
@@ -89,16 +106,24 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 
+# WP-CLI Bash completion
+autoload bashcompinit
+bashcompinit
+source $HOME/.composer/vendor/wp-cli/wp-cli/utils/wp-completion.bash
+
 #source `brew --prefix git`/etc/bash_completion.d/git-completion.bash
+
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export CODAPATH="/Users/nateb/Applications/Coda\ 2.app:"
 export SVN_EDITOR="subl"
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages
-#export GEM_HOME=/usr/local/Cellar/ruby/1.9.3-p374/lib/ruby/gems/1.9.1
-#export GEM_PATH=/usr/local/Cellar/ruby/1.9.3-p374/lib/ruby/gems/1.9.1
+export GEM_HOME="$(brew --prefix)"
+#export GEM_PATH=/usr/local/lib/ruby/gems/2.0.0/gems/gems/
 export NODE_PATH=/usr/local/lib/node_modules
 export GISTY_DIR="$HOME/Documents/Source/gists"
 export GISTY_ACCESS_TOKEN=103b1666516255e4254b679cc977331fb89717e4
+export HOMEBREW_GITHUB_API_TOKEN=d29246442f0097ec4ef24f4af09475cbc324ba4b
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/include:/usr/local/mysql/bin:/usr/local/lib/node_modules:/usr/local/share/npm/bin:$HOME/.rvm/bin:/usr/local/opt/ruby/bin:/usr/local/Cellar/ruby/1.9.3-p374/bin:/usr/local/opt/ruby/lib/ruby/gems/1.9.1/bin:/usr/local/share/python:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/include:/usr/local/mysql/bin:/usr/local/lib/node_modules:/usr/local/share/npm/bin:/usr/local/opt/ruby/bin:$HOME/.composer/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:$PATH
