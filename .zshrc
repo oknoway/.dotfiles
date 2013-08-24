@@ -113,8 +113,6 @@ source $HOME/.composer/vendor/wp-cli/wp-cli/utils/wp-completion.bash
 
 #source `brew --prefix git`/etc/bash_completion.d/git-completion.bash
 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 export CODAPATH="/Users/nateb/Applications/Coda\ 2.app:"
 export SVN_EDITOR="subl"
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages
