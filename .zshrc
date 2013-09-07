@@ -50,21 +50,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(autojump bower emoji-clock git github gnu-utils history history-substring-search npm osx pip python sublime terminalapp vagrant zsh-syntax-highlighting)
-
-export MARKPATH=$HOME/.marks
-function jump {
-    cd -P $MARKPATH/$1 2>/dev/null || echo "No such mark: $1"
-}
-function mark {
-    mkdir -p $MARKPATH; ln -s $(pwd) $MARKPATH/$1
-}
-function unmark {
-    rm -i $MARKPATH/$1
-}
-function marks {
-    ls -l $MARKPATH | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
-}
+plugins=(autojump bower emoji-clock git github gnu-utils history history-substring-search jump npm osx pip python sublime terminalapp vagrant zsh-syntax-highlighting)
 
 # http://superuser.com/questions/313650/resume-zsh-terminal-os-x-lion/315029#answer-328148
 # Tell the terminal about the working directory whenever it changes.
@@ -110,8 +96,6 @@ source $ZSH/oh-my-zsh.sh
 autoload bashcompinit
 bashcompinit
 source $HOME/.wp-cli/vendor/wp-cli/wp-cli/utils/wp-completion.bash
-
-#source `brew --prefix git`/etc/bash_completion.d/git-completion.bash
 
 export CODAPATH="/Users/nateb/Applications/Coda\ 2.app:"
 export SVN_EDITOR="subl"
