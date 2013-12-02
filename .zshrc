@@ -17,6 +17,7 @@ alias npm="noglob npm"
 alias sass="noglob sass"
 
 alias fixopenwith="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user"
+alias bup="brew update && brew upgrade"
 
 case 'uname' in
     Darwin)
@@ -108,4 +109,4 @@ export GISTY_ACCESS_TOKEN=103b1666516255e4254b679cc977331fb89717e4
 export HOMEBREW_GITHUB_API_TOKEN=d29246442f0097ec4ef24f4af09475cbc324ba4b
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/include:/usr/local/mysql/bin:/usr/local/lib/node_modules:/usr/local/share/npm/bin:/usr/local/opt/ruby/bin:$HOME/.composer/bin:$HOME/.wp-cli/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/include:/usr/local/mysql/bin:/usr/local/lib/node_modules:/usr/local/share/npm/bin:/usr/local/opt/ruby/bin:/Library/Developer/CommandLineTools/usr/bin:$HOME/.composer/bin:$HOME/.wp-cli/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:$PATH
