@@ -71,6 +71,8 @@ if [[ $('uname') == 'Darwin' ]]; then
 elif [[ $('uname') == 'Linux' ]]; then
 	alias update='sudo apt-get update'
 	alias upgrade='sudo apt-get upgrade'
+	alias aptdate='sudo aptitude update'
+	alias aptgrade='sudo aptitude upgrade'
 
 fi
 
