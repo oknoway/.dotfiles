@@ -1,0 +1,43 @@
+TM_GIT             = "/usr/local/bin/git"
+excludeFiles       = "*.{so,pyc,o,scssc}"
+excludeDirectories = "build,dist,tmp,log"
+
+# show the path to the current tab's file in the window title 
+# (replace the 2 instances of 'username' in the string below 
+# with your mac username).
+windowTitle    = "$TM_DISPLAYNAME${TM_DIRECTORY/\A(?:\/Users\/nateb\w+\/?(.*)|(.+))\z/${2:? – ${2/\A\/Users\/nateb/~/}:${1/\A(?=.)/ – /}}/}"
+
+fontName       = "Source Code Pro Light" 
+fontSize       = 14
+tabSize        = 2
+softTabs       = false
+wrapColumn     = Use Window Frame
+softWrap       = false
+showInvisibles = true
+
+# Extra files to include
+#
+myExtraIncludes = ".tm_properties,.htaccess,.gitignore,.jshintrc"
+fileBrowserGlob = "{*,$myExtraIncludes}"
+include         = "{$include,$myExtraIncludes}"
+
+# Hide log, vendor and tmp directories from search popups.
+#
+myExtraExcludes       = "log,vendor,tmp"
+excludeInFileChooser  = "{$excludeInFileChooser,$myExtraExcludes}" 
+excludeInFolderSearch = "{$excludeInFolderSearch,$myExtraExcludes}" 
+
+# If you also want to hide them from your project manager pane, add
+# the following line to your project's local .tm_properties.
+#
+excludeInBrowser = "{$excludeInBrowser,log,vendor,tmp}" 
+
+# special per-filetype rules can be specified like so:
+[ *.{txt,md,mdown,markdown} ]
+spellChecking = true
+
+[ *.{icns,ico,jpg,jpeg,m4v,nib,pdf,png,psd,pyc,rtf,tif,tiff,xib} ]
+binary = true
+
+[ "{README,INSTALL,LICENSE,TODO,NFO}" ]
+fileType = "text.plain"
