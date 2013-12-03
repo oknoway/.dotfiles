@@ -16,6 +16,7 @@ alias bower="noglob bower"
 alias npm="noglob npm"
 alias sass="noglob sass"
 
+alias ls="ls -AGl"
 
 if [[ $('uname') == 'Darwin' ]]; then
 	
@@ -90,7 +91,7 @@ source $HOME/.wp-cli/vendor/wp-cli/wp-cli/utils/wp-completion.bash
 # DISABLE_AUTO_UPDATE="true"
 
 # Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
+DISABLE_LS_COLORS="true"
 
 # Uncomment following line if you want to disable autosetting terminal title.
 # DISABLE_AUTO_TITLE="true"
@@ -105,15 +106,24 @@ plugins=(autojump bower emoji-clock git github gnu-utils history history-substri
 
 source $ZSH/oh-my-zsh.sh
 
-export CODAPATH="/Users/nateb/Applications/Coda\ 2.app:"
-export SVN_EDITOR="subl"
-export PYTHONPATH=/usr/local/lib/python2.7/site-packages
-export GEM_HOME="$(brew --prefix)"
-#export GEM_PATH=/usr/local/lib/ruby/gems/2.0.0/gems/gems/
-export NODE_PATH=/usr/local/lib/node_modules
-export GISTY_DIR="$HOME/Documents/Source/gists"
-export GISTY_ACCESS_TOKEN=103b1666516255e4254b679cc977331fb89717e4
-export HOMEBREW_GITHUB_API_TOKEN=d29246442f0097ec4ef24f4af09475cbc324ba4b
+
+if [[ $('uname') == 'Darwin' ]]; then
+	
+	# Mac Constants
+	export CODAPATH="/Users/nateb/Applications/Coda\ 2.app:"
+	export SVN_EDITOR="subl"
+	export PYTHONPATH=/usr/local/lib/python2.7/site-packages
+	export GEM_HOME="$(brew --prefix)"
+	#export GEM_PATH=/usr/local/lib/ruby/gems/2.0.0/gems/gems/
+	export NODE_PATH=/usr/local/lib/node_modules
+	export GISTY_DIR="$HOME/Documents/Source/gists"
+	export GISTY_ACCESS_TOKEN=103b1666516255e4254b679cc977331fb89717e4
+	export HOMEBREW_GITHUB_API_TOKEN=d29246442f0097ec4ef24f4af09475cbc324ba4b
+
+elif [[ $('uname') == 'Linux' ]]; then
+	# should do some exports here.
+
+fi
 
 # Customize to your needs...
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/include:/usr/local/mysql/bin:/usr/local/lib/node_modules:/usr/local/share/npm/bin:/usr/local/opt/ruby/bin:/Library/Developer/CommandLineTools/usr/bin:$HOME/.composer/bin:$HOME/.wp-cli/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:$PATH
