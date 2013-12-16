@@ -16,9 +16,10 @@ alias bower="noglob bower"
 alias npm="noglob npm"
 alias sass="noglob sass"
 
-alias ls="ls -AGl"
-
 if [[ $('uname') == 'Darwin' ]]; then
+
+	# colorize ls
+	alias ls="ls -AGl"
 	
 	# Repair LaunchServices
 	alias fixopenwith="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user"
@@ -74,6 +75,9 @@ elif [[ $('uname') == 'Linux' ]]; then
 	alias upgrade='sudo apt-get upgrade'
 	alias aptdate='sudo aptitude update'
 	alias aptgrade='sudo aptitude upgrade'
+
+	# colorize ls
+	alias ls="ls -Al"
 
 fi
 
