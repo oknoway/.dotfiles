@@ -9,6 +9,7 @@
 	br = branch
 	ci = commit
 	st = status
+	workemail = config user.email \"nate@findsubstance.com\"
 [mergetool]
 	keepBackup = true
 	prompt = false

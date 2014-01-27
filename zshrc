@@ -48,16 +48,16 @@ fi
 
 
 # WP-CLI Bash completion
-autoload bashcompinit
-bashcompinit
-source $HOME/.wp-cli/vendor/wp-cli/wp-cli/utils/wp-completion.bash
+#autoload bashcompinit
+#bashcompinit
+#source $HOME/.wp-cli/vendor/wp-cli/wp-cli/utils/wp-completion.bash
 
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
 # Comment this out to disable weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment following line if you want to disable colors in ls
 DISABLE_LS_COLORS="true"
@@ -94,4 +94,4 @@ elif [[ $('uname') == 'Linux' ]]; then
 fi
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/include:/usr/local/mysql/bin:/usr/local/lib/node_modules:/usr/local/share/npm/bin:/usr/local/opt/ruby/bin:/Library/Developer/CommandLineTools/usr/bin:$HOME/.composer/bin:$HOME/.wp-cli/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/include:/usr/local/mysql/bin:/usr/local/lib/node_modules:/usr/local/share/npm/bin:/usr/local/opt/ruby/bin:/Library/Developer/CommandLineTools/usr/bin:$HOME/.composer/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:$PATH
