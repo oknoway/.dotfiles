@@ -41,8 +41,8 @@ elif [[ $('uname') == 'Linux' ]]; then
 	# colorize ls
 	alias ls="ls -Al"
 	
-	# s/mate/nano
-	alias mate="nano"
+	# s/mate/rmate
+	alias mate="rmate"
 
 fi
 
