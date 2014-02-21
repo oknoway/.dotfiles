@@ -47,12 +47,6 @@ elif [[ $('uname') == 'Linux' ]]; then
 fi
 
 
-# WP-CLI Bash completion
-#autoload bashcompinit
-#bashcompinit
-#source $HOME/.wp-cli/vendor/wp-cli/wp-cli/utils/wp-completion.bash
-
-
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -81,8 +75,8 @@ if [[ $('uname') == 'Darwin' ]]; then
 	export CODAPATH="/Users/nateb/Applications/Coda\ 2.app:"
 	export SVN_EDITOR="mate"
 	export PYTHONPATH=/usr/local/lib/python2.7/site-packages
-	export GEM_HOME=/usr/local/Cellar/gems/2.0.0
-	#export GEM_PATH=/usr/local/lib/ruby/gems/2.0.0/gems/gems/
+	export GEM_HOME=/usr/local/opt/ruby/bin/
+	export GEM_PATH=/usr/local/opt/ruby/bin/:
 	export NODE_PATH=/usr/local/lib/node_modules
 	export GISTY_DIR="$HOME/Documents/Source/gists"
 	export GISTY_ACCESS_TOKEN=103b1666516255e4254b679cc977331fb89717e4
