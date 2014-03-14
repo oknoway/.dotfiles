@@ -25,6 +25,11 @@ if [ ! -e ~/.gitconfig ]; then
   ln -s ~/.dotfiles/gitconfig ~/.gitconfig
 fi
 
+# mysql
+if [ ! -e ~/.my.cnf ]; then
+  ln -s ~/.dotfiles/my.cnf ~/.my.cnf
+fi
+
 # textmate
 if [ ! -e ~/.tm_properties ]; then
   ln -s ~/.dotfiles/tm_properties ~/.tm_properties
