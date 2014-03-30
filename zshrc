@@ -65,7 +65,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(zsh-syntax-highlighting autojump bower emoji-clock git github gnu-utils history history-substring-search jira jump npm osx pip python sublime terminalapp vagrant)
+plugins=(zsh-syntax-highlighting autojump bower emoji-clock git github gnu-utils history history-substring-search jira jump npm osx pass pip python sublime terminalapp vagrant)
 
 source $ZSH/oh-my-zsh.sh
 
