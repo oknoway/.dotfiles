@@ -40,6 +40,11 @@ if [ ! -e ~/.multitailrc ]; then
   ln -s ~/.dotfiles/multitailrc ~/.multitailrc
 fi
 
+# wp-cli
+if [ ! -e ~/.wp-cli/config.yml ]; then
+  ln -s ~/.dotfiles/wp-cli.config.yml ~/.wp-cli/config.yml
+fi
+
 # Submodules
 git submodule status | grep '^\-.*'
 if [ "$?" = "0" ]; then
