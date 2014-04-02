@@ -19,7 +19,7 @@ alias sass="noglob sass"
 if [[ $('uname') == 'Darwin' ]]; then
 
 	# colorize ls
-	alias ls="ls -AGl"
+	alias ls="ls -AGlh"
 	
 	# Repair LaunchServices
 	alias fixopenwith="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user"
@@ -39,7 +39,7 @@ elif [[ $('uname') == 'Linux' ]]; then
 	alias aptgrade='sudo aptitude upgrade'
 
 	# colorize ls
-	alias ls="ls -Al"
+	alias ls="ls -Alh"
 	
 	# s/mate/rmate
 	alias mate="rmate"
