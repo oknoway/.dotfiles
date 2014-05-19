@@ -7,7 +7,7 @@ excludeDirectories = "build,dist,tmp,log"
 # with your mac username).
 windowTitle    = "$TM_DISPLAYNAME${TM_DIRECTORY/\A(?:\/Users\/nateb\w+\/?(.*)|(.+))\z/${2:? – ${2/\A\/Users\/nateb/~/}:${1/\A(?=.)/ – /}}/}"
 
-fontName       = "Source Code Pro ExtraLight" 
+fontName       = "SourceCodePro-ExtraLight" 
 fontSize       = 14
 tabSize        = 2
 softTabs       = true
