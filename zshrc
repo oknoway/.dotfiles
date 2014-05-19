@@ -16,6 +16,8 @@ alias bower="noglob bower"
 alias npm="noglob npm"
 alias sass="noglob sass"
 
+
+
 if [[ $('uname') == 'Darwin' ]]; then
 
 	# colorize ls
