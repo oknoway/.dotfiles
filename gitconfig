@@ -1,6 +1,7 @@
 [core]
 	quotepath = false
 	excludesfile = ~/.gitignore
+	editor = mate -w
 [user]
 	name = Nate Bedortha
 	email = nate@oknoway.com
