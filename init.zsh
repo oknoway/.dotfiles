@@ -25,6 +25,10 @@ if [ ! -e ~/.gitconfig ]; then
   ln -s ~/.dotfiles/gitconfig ~/.gitconfig
 fi
 
+if [ ! -e ~/.gitignore ]; then
+  ln -s ~/.dotfiles/gitignore ~/.gitignore
+fi
+
 # textmate
 if [ ! -e ~/.tm_properties ]; then
   ln -s ~/.dotfiles/tm_properties ~/.tm_properties
