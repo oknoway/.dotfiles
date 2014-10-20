@@ -27,7 +27,7 @@ if [[ $('uname') == 'Darwin' ]]; then
 	alias fixopenwith="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user"
 	
 	# brew upgrade
-	alias bup="brew update && brew upgrade"
+	alias bup="brew update && brew upgrade && brew cleanup && brew prune"
 
 	# cd to active Finder window
 	cdf() {
