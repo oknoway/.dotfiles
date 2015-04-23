@@ -17,7 +17,7 @@ showInvisibles = true
 
 # Extra files to include
 #
-myExtraIncludes = ".tm_properties,.htaccess,.gitignore,.jshintrc,.zshrc,.zprofile,.gitmodules,.gitconfig,.bowerrc"
+myExtraIncludes = ".tm_properties,.htaccess,.gitignore,.jshintrc,.zshrc,.zprofile,.gitmodules,.gitconfig,.bowerrc,.scss-lint.yml"
 fileBrowserGlob = "{*,$myExtraIncludes}"
 include         = "{$include,$myExtraIncludes}"
 
