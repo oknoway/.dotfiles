@@ -75,7 +75,7 @@ export HISTIGNORE="ls:cd:cd -:pwd:exit:date: * --help";
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(zsh-syntax-highlighting autojump brew brew-cask bower catimg emoji-clock git git-extras gnu-utils history history-substring-search httpie jira jump npm osx pass pip python sublime terminalapp textmate vagrant wp-cli z)
+plugins=(zsh-syntax-highlighting autojump brew brew-cask bower catimg emoji-clock git git-extras gnu-utils history history-substring-search httpie jump npm osx pass pip python sublime terminalapp textmate vagrant wp-cli z)
 
 source $ZSH/oh-my-zsh.sh
 
