@@ -18,7 +18,7 @@ alias sass="noglob sass"
 
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | printf '=> Public key copied to pasteboard.\n'";
 
-if [[ $('uname') == 'Darwin' ]]; then
+if [[ "$OSTYPE" = darwin* ]]; then
 
   # colorize ls
   alias ls="ls -AGlh"
@@ -34,7 +34,7 @@ if [[ $('uname') == 'Darwin' ]]; then
     cd "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`"
   }
 
-elif [[ $('uname') == 'Linux' ]]; then
+elif [[ "$OSTYPE" = linux* ]]; then
   alias update='sudo apt-get update'
   alias upgrade='sudo apt-get upgrade'
   alias aptdate='sudo aptitude update'
@@ -79,7 +79,7 @@ plugins=(zsh-syntax-highlighting autojump brew brew-cask bower catimg emoji-cloc
 
 source $ZSH/oh-my-zsh.sh
 
-if [[ $('uname') == 'Darwin' ]]; then
+if [[ "$OSTYPE" = darwin* ]]; then
   
   # Mac Constants
   export CODAPATH="/Users/nateb/Applications/Coda\ 2.app:"
@@ -92,7 +92,7 @@ if [[ $('uname') == 'Darwin' ]]; then
   export GISTY_ACCESS_TOKEN=103b1666516255e4254b679cc977331fb89717e4
   export HOMEBREW_GITHUB_API_TOKEN=d29246442f0097ec4ef24f4af09475cbc324ba4b
 
-elif [[ $('uname') == 'Linux' ]]; then
+elif [[ "$OSTYPE" = linux* ]]; then
   
   # Linux constants
   export GISTY_DIR="$HOME/Documents/Source/gists"
