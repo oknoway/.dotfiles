@@ -6,6 +6,7 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="oknoway"
+# ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -26,6 +27,9 @@ if [[ "$OSTYPE" = darwin* ]]; then
   # Repair LaunchServices
   alias fixopenwith="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user"
   
+  # aws autocompletion
+  source /usr/local/share/zsh/site-functions/_aws
+  
   # brew upgrade
   alias bup="brew update && brew upgrade --all && brew cleanup && brew prune"
 
@@ -33,6 +37,10 @@ if [[ "$OSTYPE" = darwin* ]]; then
   cdf() {
     cd "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`"
   }
+  
+  #android emulator
+  alias droid="~/Library/Android/sdk/tools/emulator -netdelay none -netspeed full -avd Nexus_One_API_15_HWKbd"
+  
 
 elif [[ "$OSTYPE" = linux* ]]; then
   alias update='sudo apt-get update'
@@ -75,7 +83,7 @@ export HISTIGNORE="ls:cd:cd -:pwd:exit:date: * --help";
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(zsh-syntax-highlighting autojump brew brew-cask bower catimg emoji-clock git git-extras gnu-utils history history-substring-search httpie jump npm osx pass pip python sublime terminalapp textmate vagrant wp-cli z)
+plugins=(zsh-syntax-highlighting autojump aws brew brew-cask bower catimg emoji-clock git git-extras gnu-utils history history-substring-search httpie jump npm osx pass pip python sublime terminalapp textmate vagrant wp-cli z)
 
 source $ZSH/oh-my-zsh.sh
 
