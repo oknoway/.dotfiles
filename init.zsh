@@ -34,11 +34,6 @@ if [ ! -e ~/.tm_properties ]; then
   ln -s ~/.dotfiles/tm_properties ~/.tm_properties
 fi
 
-# bower
-if [ ! -e ~/.bowerrc ]; then
-  ln -s ~/.dotfiles/bowerrc ~/.bowerrc
-fi
-
 # multitail
 if [ ! -e ~/.multitailrc ]; then
   ln -s ~/.dotfiles/multitailrc ~/.multitailrc
