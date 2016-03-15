@@ -23,24 +23,21 @@ if [[ "$OSTYPE" = darwin* ]]; then
 
   # colorize ls
   alias ls="ls -AGlh"
-  
+
   # Repair LaunchServices
   alias fixopenwith="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user"
-  
+
   # aws autocompletion
   source /usr/local/share/zsh/site-functions/_aws
-  
-  # brew upgrade
-  alias bup="brew update && brew upgrade --all && brew cleanup && brew prune"
 
   # cd to active Finder window
   cdf() {
     cd "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`"
   }
-  
+
   #android emulator
   alias droid="~/Library/Android/sdk/tools/emulator -netdelay none -netspeed full -avd Nexus_One_API_15_HWKbd"
-  
+
 
 elif [[ "$OSTYPE" = linux* ]]; then
   alias update='sudo apt-get update'
@@ -50,7 +47,7 @@ elif [[ "$OSTYPE" = linux* ]]; then
 
   # colorize ls
   alias ls="ls -Alh"
-  
+
   # s/mate/rmate
   alias mate="rmate"
 
@@ -88,20 +85,20 @@ plugins=(zsh-syntax-highlighting autojump aws brew brew-cask bower catimg emoji-
 source $ZSH/oh-my-zsh.sh
 
 if [[ "$OSTYPE" = darwin* ]]; then
-  
+
   # Mac Constants
   export CODAPATH="/Users/nateb/Applications/Coda\ 2.app:"
-  export SVN_EDITOR="mate"
+  export SVN_EDITOR="atom"
   export PYTHONPATH=/usr/local/lib/python2.7/site-packages
   export GEM_HOME=/usr/local/opt/ruby/bin/
   export GEM_PATH=/usr/local/opt/ruby/bin/:
   export NODE_PATH=/usr/local/lib/node_modules
   export GISTY_DIR="$HOME/Documents/Source/gists"
   export GISTY_ACCESS_TOKEN=103b1666516255e4254b679cc977331fb89717e4
-  export HOMEBREW_GITHUB_API_TOKEN=d29246442f0097ec4ef24f4af09475cbc324ba4b
+  export HOMEBREW_GITHUB_API_TOKEN=02db06fbbbf9618665195f4ccc50c90bfedeb8fc
 
 elif [[ "$OSTYPE" = linux* ]]; then
-  
+
   # Linux constants
   export GISTY_DIR="$HOME/Documents/Source/gists"
   export GISTY_ACCESS_TOKEN=103b1666516255e4254b679cc977331fb89717e4
