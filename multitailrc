@@ -1,1 +1,233 @@
+# apache
+colorscheme:apache:default Apache logging (webserver)
+cs_re:red: 404
+cs_re:cyan::
+cs_re:green:\[
+cs_re:green:\]
+# ip-adresses in the format x.x.x.x
+cs_re:yellow:^[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}
+# hostnames
+cs_re:yellow:^[^ ]*
+### Apache errorlog
+colorscheme:apache_error:default Apache error logging
+cs_re:yellow:\[client .*\]
+cs_re:red: [^ ]*$
+cs_re:blue:^\[... ... .. ..:..:.. ....\]
+#
+# default colorschemes:
+scheme:apache:/usr/local/var/log/nginx/*
+#
+# default number of lines to buffer FOR THESE PATTERNS:
+#default_nlines:500:/var/log/apache/*.access
+#default_bytes:100kb:/var/log/
+#
+# default number of lines to buffer globally
+# one can set only 1 of these two
+#global_default_nlines:500
+global_default_nkb:1MB
+#
+# how often to check for mail
+# set to 0 to disable
+# default is every 5 seconds
 check_mail:0
+#
+# how timestrings will look when using '-ts'
+line_ts_format:%Y/%m/%d %H:%M:%S
+#
+# where to find tail. this is used when you don't use the default tail (using
+# turbotail for example)
+# or your tail is located somewhere else
+#tail:/usr/bin/tail
+# wether this tail only understands posix commands (=yes)
+posix_tail:no
+#
+# use bright colors
+#bright:1
+#
+# wether to abbreviate filesizes to xKB/MB/GB
+abbreviate_filesize:on
+#
+# show number of subwindow?
+show_subwindow_id:off
+#
+# attributes for the marker-line
+markerline_color:red,black,reverse
+#
+# show timestamp in markerline?
+markerline_timestamp:on
+# whot character to print in the markerline
+markerline_char:-
+#
+# attributes for the line that is printed when multitail switches subwindow
+changeline_color:blue,white,bold/reverse
+changeline_char:-
+#
+# line printed when nothing happens in a window for a while
+idleline_color:yellow,black,bold/reverse
+idleline_char:-
+#
+# line printed for multitail messages (regexp errors, file truncated, etc)
+msgline_color:magenta,black,bold/reverse
+msgline_char:-
+#
+# when converting to a timestring, use this format:
+# (also for markerline)
+ts_format:%b %d %H:%M:%S
+#
+# timestring format for conversions
+cnv_ts_format:%b %d %H:%M:%S %Y
+#
+# timestring format for statusline
+statusline_ts_format:%Y/%m/%d %H:%M:%S
+#
+# put statusline above the data instead below it?
+statusline_above_data:no
+#
+# statusline attributes
+statusline_attrs:white,black,reverse
+#
+# conversions
+# note: the part you want to have replaced must be between '(' and ')'
+# possible conversions:
+#	ip4tohost:   an ip-address in 4 byte dotted format to a hostname
+#	epochtodate: a value representing the number of seconds since 1970 to
+#	             a time-string. format of the string can be set with
+#	             "ts_format".
+#	errnotostr:  an errno-value to the error message it represents
+#	hextodec:    a hex-value into its decimal version
+#	dectohex:    a decimal value into hexadecimal
+#       tai64todate: converts a TAI64 string to a datestring (see http://cr.yp.to/libtai/tai64.html#tai64n for details)
+#       script       this is a special case: it requires an extra parameter (before the regular expression): this parameter
+#                    selects a script (perl, bash, as long as it is executable) which loops forever and then reads a line
+#                    ending with \n, processes it and then emits the converted output also ending with \n (in 1 write!)
+#                    Please note: when using perl, disable i/o buffering!
+#       abbrtok:     abbreviates a value to KB/MB/GB
+#       signrtostring: signal number to descriptive name
+# convert:apache:ip4tohost:^([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})
+# convert:squid:epochtodate:^([0-9]*)
+# convert:squid:ip4tohost:^[^ ]* *[0-9]* *([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})
+# convert:asterisk:epochtodate:^([0-9]*).([0-9]*)
+# convert:nagios.log:epochtodate:^.([0-9]*).
+# convert:qmailtimestr:tai64todate:^(@[^ ]*)
+# convert:geoip:script:/etc/multitail/convert-geoip.pl:([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})
+#
+# shell to invoke
+shell:/usr/local/bin/zsh
+#
+# default scrollback linewrap mode
+# default is yes (do wrap)
+dsblwm:yes
+#
+# should a popup box be displayed when a window closes by itself?
+warn_closed:yes
+#
+# allow 8 bit ascii? (e.g. umlauts etc.)
+allow_8bit:yes
+#
+# beep, flash, popup or none when error?
+beep_method:flash
+# in case of beep_method:popup; how long to display the popup before it
+# automatically disappears (in seconds)
+beep_popup_length:0.1
+#
+# ^x instead of an inverse .
+caret_notation:yes
+#
+# what umask to use when creating files
+umask:0022
+#
+# how often to refresh popups (in case applicable)
+popup_refresh_interval:5
+#
+# print a markerline when one merges multiple logfiles and tail changes
+# from one logfile to an other
+global_mark_change:no
+# default settings for files selected with a regular expression(!)
+default_mark_change:yes:/usr/local/var/log/nginx/.*
+#
+replace_by_markerline:-- MARK --
+#
+# what to buffer by default 'a'll or what went through the 'f'ilter
+default_bufferwhat:f
+#
+# should searches be case insentive? press 'I' in the main menu to toggle at run-time
+searches_case_insensitive:no
+#
+# default linewrap mode
+# a: all
+# l: left
+# r: right
+# s: syslog
+# S: syslog w/o procname
+# o: offset
+# w: wordwrap
+default_linewrap:a
+#
+# follow filename instead of descriptor?
+follow_filename:yes
+#
+# close windows when the end-of-file was reached?
+close_closed_windows:yes
+#
+# should we skip empty lines? (the scrollback window always displays them)
+suppress_empty_lines:yes
+#
+# how the splitline should look like
+splitline_attrs:white,black,reverse
+# can be attr (use attributes defined with splitline_attrs), regular (use statusline attributes), none (display none)
+splitline:attributes
+#
+# what attributes to use when displaying things in reverse (-eC/-ec, highlight in main menu)
+inverse:bold/reverse
+#
+# what key must the user press to abort an action? e.g. a menu or so
+# this parameter expects an ascii-value
+# e.g. control + a = 1
+# escape = 27 - please note that you would have to press it twice
+# ^g = 7
+abort_key:7
+# what key to press to exit multitail
+# ^c = 3
+exit_key:3
+#
+# when a buffer (for scrollback) gets too full, some lines must be freed (unless one sets the buffersize to unlimited)
+# with this parameter one can set the minimum lines to free. this parameter is implemented for efficiency as with a
+# 1MB buffer buffer management starts to use quit a bit of processortime
+min_shrink:10
+#
+# when scrolling or searching through the logging, show (sub-)window-nrs? (toggle with ^t)
+# press 't' to see a list of window-nrs and what's displayed in them
+scrollback_show_winnrs:no
+#
+# for word-wrap: what is the max length of a word which should still be wrapped
+wordwrapmaxlength:31
+#
+# for searches, multitail can remeber a history which can be retrieved with ^r or cursorkey down in places where
+# you can enter searchstrings
+# set 'history_size' to 0 to disable this feature
+searchhistory_file:~/.multitail.searchhistory
+# how many strings to remember
+searchhistory_size:15
+#
+# in search-fields: give an empty edit-field or the previously used search string
+reuse_searchstring:no
+#
+# how many initial lines to tail at least initially (if available)
+min_n_bufferlines:50
+#
+# text to put in front of line with window-number
+window_number:[%02d]
+subwindow_number:[%02d]
+#
+# parameters for --limit / --Limit
+# format of timestamp in logging
+syslog_ts_format:%Y/%m/%d %H:%M:%S
+# show ip addresses or hostnames?
+resolv_ip_addresses:yes
+#
+# suppress colors in the scollback window? this speeds up scrolling a little
+scrollback_no_colors:no
+#
+# when you search in the scrollback: open new window with found strings (= on)
+# or jump to the next found (= off)
+scrollback_search_new_window:yes
