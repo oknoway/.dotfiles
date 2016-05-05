@@ -18,6 +18,17 @@ if [ ! -e ~/.tmux ]; then
   ln -s ~/.dotfiles/tmux ~/.tmux
 fi
 
+# atom
+if [ ! -e ~/.atom/config.cson ]; then
+  ln -s ~/.dotfiles/atom/config.cson ~/.atom/config.cson
+fi
+if [ ! -e ~/.atom/keymap.cson ]; then
+  ln -s ~/.dotfiles/atom/keymap.cson ~/.atom/keymap.cson
+fi
+if [ ! -e ~/.atom/styles.less ]; then
+  ln -s ~/.dotfiles/atom/styles.less ~/.atom/styles.less
+fi
+
 # ackrc
 if [ ! -e ~/.ackrc ]; then
   ln -s ~/.dotfiles/ackrc ~/.ackrc

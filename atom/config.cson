@@ -1,0 +1,45 @@
+"*":
+  core:
+    audioBeep: false
+    disabledPackages: [
+      "atom-jshint"
+      "parcel"
+    ]
+    ignoredNames: [
+      ".sass-cache"
+      ".DS_Store"
+    ]
+    openEmptyEditorOnStart: false
+    themes: [
+      "native-ui"
+      "base16-tomorrow-dark-theme"
+    ]
+  editor:
+    fontFamily: "Source Code Pro"
+    invisibles: {}
+    showInvisibles: true
+  "exception-reporting":
+    userId: "6b2bf34b-29b5-acb5-bf3f-9695a6a35577"
+  "fuzzy-finder":
+    ignoredNames: [
+      "vendor"
+      "node_modules"
+    ]
+    preserveLastSearch: true
+    useAlternateScoring: true
+  linter:
+    errorPanelHeight: 24
+  "linter-jshint":
+    disableWhenNoJshintrcFileInPath: true
+  "open-recent": {}
+  "tree-view":
+    hideIgnoredNames: true
+    hideVcsIgnoredFiles: true
+    showOnRightSide: true
+    sortFoldersBeforeFiles: false
+    squashDirectoryNames: true
+  "unity-ui":
+    colorStatusIndicatorsInTreeView: true
+    showIcons: true
+  welcome:
+    showOnStartup: false
