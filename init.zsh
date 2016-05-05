@@ -12,7 +12,10 @@ fi
 
 # tmux
 if [ ! -e ~/.tmux.conf ]; then
-  ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
+  ln -s ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
+fi
+if [ ! -e ~/.tmux ]; then
+  ln -s ~/.dotfiles/tmux ~/.tmux
 fi
 
 # ackrc
@@ -86,4 +89,3 @@ do
     ln -s ~/.dotfiles/zsh_custom_plugins/$plugin_dir ~/.dotfiles/oh-my-zsh/custom/plugins/$plugin_dir
   fi
 done
-
