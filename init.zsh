@@ -78,10 +78,6 @@ if [ ! -e ~/.zshenv ]; then
   ln -s ~/.dotfiles/zshenv ~/.zshenv
 fi
 
-if [ ! -e ~/.zprofile ]; then
-  ln -s ~/.dotfiles/zprofile ~/.zprofile
-fi
-
 
 cd ~/.dotfiles/zsh_custom_themes
 for theme_file in *

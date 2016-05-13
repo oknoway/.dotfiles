@@ -84,6 +84,8 @@ plugins=(zsh-syntax-highlighting autojump aws brew brew-cask bower catimg dirhis
 
 source $ZSH/oh-my-zsh.sh
 
+source ~/.zprofile
+
 if [[ "$OSTYPE" = darwin* ]]; then
 
   # Mac Constants
