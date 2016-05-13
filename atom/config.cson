@@ -1,4 +1,6 @@
 "*":
+  "activate-power-mode":
+    autoToggle: false
   core:
     audioBeep: false
     disabledPackages: [
