@@ -78,21 +78,12 @@ if [ ! -e ~/.zshenv ]; then
   ln -s ~/.dotfiles/zshenv ~/.zshenv
 fi
 
+# zsh custom
+mkdir -p ~/.dotfiles/oh-my-zsh/custom
+if [ ! -e ~/.dotfiles/oh-my-zsh/custom/themes ]; then
+  ln -s ~/.dotfiles/zsh_custom_themes ~/.dotfiles/oh-my-zsh/custom/themes
+fi
 
-cd ~/.dotfiles/zsh_custom_themes
-for theme_file in *
-do
-  mkdir -p ~/.dotfiles/oh-my-zsh/custom/themes
-  if [ ! -e ~/.dotfiles/oh-my-zsh/custom/themes/$theme_file ]; then
-    ln -s ~/.dotfiles/zsh_custom_themes/$theme_file ~/.dotfiles/oh-my-zsh/custom/themes/$plugin_dir
-  fi
-done
-
-cd ~/.dotfiles/zsh_custom_plugins
-for plugin_dir in *
-do
-  mkdir -p ~/.dotfiles/oh-my-zsh/custom/plugins
-  if [ ! -e ~/.dotfiles/oh-my-zsh/custom/plugins/$plugin_dir ]; then
-    ln -s ~/.dotfiles/zsh_custom_plugins/$plugin_dir ~/.dotfiles/oh-my-zsh/custom/plugins/$plugin_dir
-  fi
-done
+if [ ! -e ~/.dotfiles/oh-my-zsh/custom/plugins ]; then
+  ln -s ~/.dotfiles/plugins ~/.dotfiles/oh-my-zsh/custom/plugins
+fi
