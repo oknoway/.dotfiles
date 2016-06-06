@@ -5,8 +5,35 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="oknoway"
-# ZSH_THEME="powerlevel9k/powerlevel9k"
+# ZSH_THEME="oknoway"
+
+POWERLEVEL9K_MODE="awesome-fontconfig"
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
+POWERLEVEL9K_MULTILINE_SECOND_PROMPT_PREFIX="⚡️ "
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %H:%M:%S}"
+
+POWERLEVEL9K_OS_ICON_BACKGROUND="white"
+POWERLEVEL9K_OS_ICON_FOREGROUND="blue"
+POWERLEVEL9K_DIR_HOME_FOREGROUND="white"
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="white"
+POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="white"
+POWERLEVEL9K_STATUS_VERBOSE=false
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_with_package_name"
+
+POWERLEVEL9K_HIDE_BRANCH_ICON=false
+POWERLEVEL9K_SHOW_CHANGESET=true
+POWERLEVEL9K_VCS_SHOW_SUBMODULE_DIRTY=false
+
+POWERLEVEL9K_RAM_ELEMENTS=(ram_free)
+
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status ram load time)
+export DEFAULT_USER="$USER"
+
+ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -38,6 +65,8 @@ if [[ "$OSTYPE" = darwin* ]]; then
   #android emulator
   alias droid="~/Library/Android/sdk/tools/emulator -netdelay none -netspeed full -avd Nexus_One_API_15_HWKbd"
 
+  # brew zsh-completion
+  fpath=(/usr/local/share/zsh-completions $fpath)
 
 elif [[ "$OSTYPE" = linux* ]]; then
   alias update='sudo apt-get update'
