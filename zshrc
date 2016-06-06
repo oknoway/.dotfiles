@@ -9,7 +9,7 @@ ZSH=$HOME/.oh-my-zsh
 
 POWERLEVEL9K_MODE="awesome-fontconfig"
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
+POWERLEVEL9K_RPROMPT_ON_NEWLINE=false
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
 POWERLEVEL9K_MULTILINE_SECOND_PROMPT_PREFIX="⚡️ "
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
@@ -54,9 +54,6 @@ if [[ "$OSTYPE" = darwin* ]]; then
   # Repair LaunchServices
   alias fixopenwith="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user"
 
-  # aws autocompletion
-  source /usr/local/share/zsh/site-functions/_aws
-
   # cd to active Finder window
   cdf() {
     cd "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`"
@@ -67,6 +64,9 @@ if [[ "$OSTYPE" = darwin* ]]; then
 
   # brew zsh-completion
   fpath=(/usr/local/share/zsh-completions $fpath)
+
+  # aws autocompletion
+  source /usr/local/share/zsh/site-functions/_aws
 
 elif [[ "$OSTYPE" = linux* ]]; then
   alias update='sudo apt-get update'
@@ -109,7 +109,7 @@ export HISTIGNORE="ls:cd:cd -:pwd:exit:date: * --help";
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(zsh-syntax-highlighting autojump aws brew brew-cask bower catimg dirhistory emoji-clock frontend-search git git-extras gnu-utils history history-substring-search httpie jump npm osx pass pip python sublime terminalapp textmate vagrant wp-cli z)
+plugins=(zsh-syntax-highlighting autojump aws brew brew-cask bower catimg dirhistory frontend-search git git-extras gnu-utils history history-substring-search httpie jump npm osx pass pip python sublime terminalapp textmate vagrant wp-cli z)
 
 source $ZSH/oh-my-zsh.sh
 
