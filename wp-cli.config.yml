@@ -1,3 +1,0 @@
-require:
-  - vendor/autoload.php
-  - commands/importcsv/import-csv.php
