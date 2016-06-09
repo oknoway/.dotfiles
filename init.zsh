@@ -22,6 +22,9 @@ fi
 if [ ! -e ~/.atom/config.cson ]; then
   ln -s ~/.dotfiles/atom/config.cson ~/.atom/config.cson
 fi
+if [ ! -e ~/.atom/init.coffee ]; then
+  ln -s ~/.dotfiles/atom/init.coffee ~/.atom/init.coffee
+fi
 if [ ! -e ~/.atom/keymap.cson ]; then
   ln -s ~/.dotfiles/atom/keymap.cson ~/.atom/keymap.cson
 fi

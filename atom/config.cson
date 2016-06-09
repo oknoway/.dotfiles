@@ -29,6 +29,10 @@
     ]
     preserveLastSearch: true
     useAlternateScoring: true
+  "grunt-runner":
+    gruntPaths: [
+      "/usr/local/bin"
+    ]
   linter:
     errorPanelHeight: 24
   "linter-jshint":
