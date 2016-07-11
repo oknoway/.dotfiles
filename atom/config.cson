@@ -8,8 +8,12 @@
       "parcel"
     ]
     ignoredNames: [
+      ".scss"
       ".sass-cache"
       ".DS_Store"
+      "node_modules"
+      ".css.map"
+      ".js.map"
     ]
     openEmptyEditorOnStart: false
     themes: [
