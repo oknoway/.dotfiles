@@ -24,7 +24,6 @@ POWERLEVEL9K_VCS_SHOW_SUBMODULE_DIRTY=false
 
 POWERLEVEL9K_RAM_ELEMENTS=(ram_free)
 
-
 if [ "$TERM_PROGRAM" = "Apple_Terminal" ] || [ "$TERM_PROGRAM" = "iTerm.app" ] ; then
 
   POWERLEVEL9K_MODE="awesome-fontconfig"
@@ -37,7 +36,7 @@ if [ "$TERM_PROGRAM" = "Apple_Terminal" ] || [ "$TERM_PROGRAM" = "iTerm.app" ] ;
   POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %H:%M:%S}"
 
   POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir vcs)
-  POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status ram load time)
+  POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(nvm status ram load time)
 
 else
 
@@ -49,7 +48,7 @@ else
   POWERLEVEL9K_TIME_FORMAT="%D{%H:%M:%S}"
 
   POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir vcs)
-  POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status)
+  POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status ram load time)
 
 fi
 
@@ -67,6 +66,9 @@ alias npm="noglob npm"
 alias sass="noglob sass"
 
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | printf '=> Public key copied to pasteboard.\n'";
+
+alias usephp56="sudo brew services stop php70 && brew unlink php70 && brew link php56 && sudo brew services start php56";
+alias usephp70="sudo brew services stop php56 && brew unlink php56 && brew link php70 && sudo brew services start php70";
 
 if [[ "$OSTYPE" = darwin* ]]; then
 
@@ -87,8 +89,11 @@ if [[ "$OSTYPE" = darwin* ]]; then
   # brew zsh-completion
   fpath=(/usr/local/share/zsh-completions $fpath)
 
-  # aws autocompletion
-  source /usr/local/share/zsh/site-functions/_aws
+  # autocompletion
+  source /usr/local/share/zsh/site-functions/*
+
+  #autojump
+  [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
 elif [[ "$OSTYPE" = linux* ]]; then
   alias update='sudo apt-get update'
@@ -141,13 +146,20 @@ if [[ "$OSTYPE" = darwin* ]]; then
   # Mac Constants
   export CODAPATH="/Users/nateb/Applications/Coda\ 2.app:"
   export SVN_EDITOR="atom"
-  export PYTHONPATH=/usr/local/lib/python2.7/site-packages
   export GEM_HOME=/usr/local/opt/ruby/bin/
   export GEM_PATH=/usr/local/opt/ruby/bin/:
   export NODE_PATH=/usr/local/lib/node_modules
   export GISTY_DIR="$HOME/Documents/Source/gists"
   export GISTY_ACCESS_TOKEN=103b1666516255e4254b679cc977331fb89717e4
   export HOMEBREW_GITHUB_API_TOKEN=02db06fbbbf9618665195f4ccc50c90bfedeb8fc
+  export PYENV_ROOT=/usr/local/var/pyenv
+
+  export NVM_DIR=~/.nvm
+  . $(brew --prefix nvm)/nvm.sh
+
+
+  # source $(brew --prefix nvm)/nvm.sh
+  if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 elif [[ "$OSTYPE" = linux* ]]; then
 
