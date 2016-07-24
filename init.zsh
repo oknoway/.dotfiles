@@ -88,5 +88,5 @@ if [ ! -e ~/.dotfiles/oh-my-zsh/custom/themes ]; then
 fi
 
 if [ ! -e ~/.dotfiles/oh-my-zsh/custom/plugins ]; then
-  ln -s ~/.dotfiles/plugins ~/.dotfiles/oh-my-zsh/custom/plugins
+  ln -s ~/.dotfiles/zsh_custom_plugins ~/.dotfiles/oh-my-zsh/custom/plugins
 fi
