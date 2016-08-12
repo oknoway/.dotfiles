@@ -8,13 +8,16 @@ else
 	for file in "$@"
 	do
 		dir=`mktemp -d`;
-		echo "Extracting images to $dir...";
-		7z e -o"$dir" "$file"
+		echo "Extracting images to $dir…";
+		#7z e -o"$dir" "$file"
+		unrar e -inul "$file" "$dir"
 
-		echo "Compressing images...";
+		echo "Compressing images…";
 
-		name=$(echo $file | cut -f 1 -d '.');
-		zip -0 -j "$name".cbz "$dir"/*.[Jj][Pp][Gg] "$dir"/*.[Pp][Nn][Gg];
+		name="${file%.*}";
+
+		echo "Writing new file: $name.cbz";
+		zip -0 -j -q "$name".cbz "$dir"/*.[JjPp][PpNn][Gg];
 
 		rm -rf "$dir"
 	done
