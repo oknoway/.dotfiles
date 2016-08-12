@@ -67,8 +67,8 @@ alias sass="noglob sass"
 
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | printf '=> Public key copied to pasteboard.\n'";
 
-alias usephp56="sudo brew services stop php70 && brew unlink php70 && brew link php56 && sudo brew services start php56";
-alias usephp70="sudo brew services stop php56 && brew unlink php56 && brew link php70 && sudo brew services start php70";
+alias usephp56="sudo brew services stop php70; sudo killall php-fpm; brew unlink php70; brew link php56; sudo brew services start php56";
+alias usephp70="sudo brew services stop php56; sudo killall php-fpm; brew unlink php56; brew link php70; sudo brew services start php70";
 
 if [[ "$OSTYPE" = darwin* ]]; then
 
@@ -85,6 +85,9 @@ if [[ "$OSTYPE" = darwin* ]]; then
 
   #android emulator
   alias droid="~/Library/Android/sdk/tools/emulator -netdelay none -netspeed full -avd Nexus_One_API_15_HWKbd"
+
+  # brew services alias
+  alias service="brew services"
 
   # brew zsh-completion
   fpath=(/usr/local/share/zsh-completions $fpath)
