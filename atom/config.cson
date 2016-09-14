@@ -4,6 +4,7 @@
     disabledPackages: [
       "atom-jshint"
       "parcel"
+      "grunt-runner"
     ]
     ignoredNames: [
       ".scss"
@@ -22,8 +23,6 @@
     fontFamily: "Source Code Pro"
     invisibles: {}
     showInvisibles: true
-  "exception-reporting":
-    userId: "6b2bf34b-29b5-acb5-bf3f-9695a6a35577"
   "fuzzy-finder":
     ignoredNames: [
       "vendor"
