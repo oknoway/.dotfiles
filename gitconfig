@@ -1,7 +1,7 @@
 [core]
 	quotepath = false
 	excludesfile = ~/.gitignore
-	editor = mate -w
+	editor = atom
 [user]
 	name = Nate Bedortha
 	email = nate@oknoway.com
@@ -10,7 +10,6 @@
 	br = branch
 	ci = commit
 	st = status
-	workemail = config user.email \"nate@findsubstance.com\"
 [mergetool]
 	keepBackup = true
 	prompt = false
