@@ -39,6 +39,8 @@
   "linter-jshint":
     disableWhenNoJshintrcFileInPath: true
   "open-recent": {}
+  "svg-preview":
+    openPreviewAutomatically: true
   "tree-view":
     hideIgnoredNames: true
     hideVcsIgnoredFiles: true
