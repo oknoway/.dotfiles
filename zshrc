@@ -36,7 +36,7 @@ if [ "$TERM_PROGRAM" = "Apple_Terminal" ] || [ "$TERM_PROGRAM" = "iTerm.app" ] ;
   POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %H:%M:%S}"
 
   POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir vcs)
-  POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(nvm status ram load time)
+  POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status ram load time)
 
 else
 
@@ -174,3 +174,5 @@ fi
 
 # Customize to your needs...
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/include:/usr/local/opt/mysql55/bin:/usr/local/lib/node_modules:/usr/local/share/npm/bin:/usr/local/opt/ruby/bin:/usr/local/opt/ruby/bin/bin:/Library/Developer/CommandLineTools/usr/bin:$HOME/.composer/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:$PATH
+
+export PATH="$HOME/.yarn/bin:$PATH"
