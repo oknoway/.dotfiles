@@ -1,13 +1,17 @@
 "*":
   core:
     audioBeep: false
+    customFileTypes:
+      "source.js": [
+        "ts"
+      ]
     disabledPackages: [
       "atom-jshint"
       "parcel"
       "grunt-runner"
+      "exception-reporting"
     ]
     ignoredNames: [
-      ".scss"
       ".sass-cache"
       ".DS_Store"
       "node_modules"
@@ -15,9 +19,10 @@
       ".js.map"
     ]
     openEmptyEditorOnStart: false
+    telemetryConsent: "no"
     themes: [
       "native-ui"
-      "base16-tomorrow-dark-theme"
+      "one-dark-syntax"
     ]
   editor:
     fontFamily: "Source Code Pro"
@@ -48,7 +53,6 @@
     sortFoldersBeforeFiles: false
     squashDirectoryNames: true
   "unity-ui":
-    colorStatusIndicatorsInTreeView: true
     showIcons: true
   welcome:
     showOnStartup: false
