@@ -20,7 +20,7 @@ if [[ -f $localroot/backup.$localdb.sql.gz ]]; then
 fi
 
 # make a backup of the current local database
-echo "Backing up local db to backup.$localdb.sql."
+echo "Backing up local db to backup.$localdb.sql.gz"
 wp db export - | gzip > "$localroot/backup.$localdb.sql.gz"
 wp db reset --yes
 
@@ -31,6 +31,9 @@ gzcat $localroot/$proddb.sql.gz | wp db import -
 
 # database is now imported so we can delete it
 rm -rf $localroot/$proddb.sql
+
+# update database if we need it
+wp core update-db
 
 # search-replace url in db
 echo "Replacing '$produrl' with '$localurl' in db."
