@@ -1,7 +1,7 @@
 [core]
 	quotepath = false
 	excludesfile = ~/.gitignore
-	editor = atom
+	editor = atom --wait
 [user]
 	name = Nate Bedortha
 	email = nate@oknoway.com
