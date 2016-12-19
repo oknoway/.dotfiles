@@ -70,6 +70,10 @@ alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | printf '=> Public key copied to 
 alias usephp56="sudo brew services stop php70; sudo killall php-fpm; brew unlink php70; brew link php56; sudo brew services start php56";
 alias usephp70="sudo brew services stop php56; sudo killall php-fpm; brew unlink php56; brew link php70; sudo brew services start php70";
 
+alias usenode6="brew unlink node; brew link node@6";
+alias usenode7="brew unlink node@6; brew link node";
+
+
 if [[ "$OSTYPE" = darwin* ]]; then
 
   # colorize ls
