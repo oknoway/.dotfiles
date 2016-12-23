@@ -45,6 +45,11 @@ fi
 if [ ! -e ~/.gitignore ]; then
   ln -s ~/.dotfiles/gitignore ~/.gitignore
 fi
+# iTerm
+if [ ! -e ~/.iterm ]; then
+  ln -s ~/.dotfiles/iterm ~/.iterm
+fi
+
 
 # textmate
 if [ ! -e ~/.tm_properties ]; then
