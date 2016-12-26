@@ -25,6 +25,16 @@ POWERLEVEL9K_HIDE_BRANCH_ICON=false
 POWERLEVEL9K_SHOW_CHANGESET=true
 POWERLEVEL9K_VCS_SHOW_SUBMODULE_DIRTY=false
 
+POWERLEVEL9K_BATTERY_VERBOSE=false
+POWERLEVEL9K_BATTERY_LOW_FOREGROUND="black"
+POWERLEVEL9K_BATTERY_LOW_BACKGROUND="160"
+POWERLEVEL9K_BATTERY_CHARGING_FOREGROUND="black"
+POWERLEVEL9K_BATTERY_CHARGING_BACKGROUND="047"
+POWERLEVEL9K_BATTERY_CHARGED_FOREGROUND="black"
+POWERLEVEL9K_BATTERY_CHARGED_BACKGROUND="047"
+POWERLEVEL9K_BATTERY_DISCONNECTED_FOREGROUND="black"
+POWERLEVEL9K_BATTERY_DISCONNECTED_BACKGROUND="160"
+POWERLEVEL9K_BATTERY_ICON=$'\uf240 '
 POWERLEVEL9K_RAM_ELEMENTS=(ram_free)
 
 if [ "$TERM_PROGRAM" = "Apple_Terminal" ] || [ "$TERM_PROGRAM" = "iTerm.app" ] ; then
@@ -39,7 +49,7 @@ if [ "$TERM_PROGRAM" = "Apple_Terminal" ] || [ "$TERM_PROGRAM" = "iTerm.app" ] ;
   POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %H:%M:%S}"
 
   POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir vcs)
-  POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status ram load time)
+  POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status battery ram load time)
 
 else
 
@@ -51,7 +61,7 @@ else
   POWERLEVEL9K_TIME_FORMAT="%D{%H:%M:%S}"
 
   POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir vcs)
-  POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status ram load time)
+  POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status battery ram load time)
 
 fi
 
@@ -145,7 +155,9 @@ export HISTIGNORE="ls:cd:cd -:pwd:exit:date: * --help";
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(comix wp certbot4osx zsh-syntax-highlighting autojump aws brew brew-cask bower catimg dirhistory frontend-search git git-extras gnu-utils history history-substring-search httpie jump npm osx pass pip python sublime terminalapp textmate vagrant wp-cli z zsh-completions)
+plugins=(comix wp certbot4osx zsh-syntax-highlighting autojump aws battery brew brew-cask bower catimg dirhistory frontend-search git git-extras gnu-utils history history-substring-search httpie jump npm osx pass pip python sublime terminalapp textmate vagrant wp-cli z zsh-completions)
+
+autoload -U +X bashcompinit && bashcompinit
 
 source $ZSH/oh-my-zsh.sh
 
