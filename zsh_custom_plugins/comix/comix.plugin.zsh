@@ -3,6 +3,6 @@ function cbr2cbz() {
 }
 
 alias comictagger="comictagger.py"
-alias tagcomix="comictagger -s -t cbl -f -o -i -1"
+alias tagcomix="comictagger -s --nooverwrite -t cbl -f -o -i -1 -w"
 alias renamecomix="comictagger -r -t cbl"
 alias zipcomix="comictagger --export-to-zip --delete-rar"
