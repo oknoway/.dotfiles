@@ -22,12 +22,14 @@
     telemetryConsent: "no"
     themes: [
       "native-ui"
-      "one-dark-syntax"
+      "seti-syntax"
     ]
   editor:
     fontFamily: "Source Code Pro"
     invisibles: {}
     showInvisibles: true
+  "file-icons":
+    onChanges: true
   "fuzzy-finder":
     ignoredNames: [
       "vendor"
@@ -35,18 +37,28 @@
     ]
     preserveLastSearch: true
     useAlternateScoring: true
+  "git-diff":
+    showIconsInEditorGutter: true
   "grunt-runner":
     gruntPaths: [
       "/usr/local/bin"
     ]
+  "highlight-line":
+    hideHighlightOnSelect: true
   linter:
     errorPanelHeight: 24
   "linter-jshint":
     disableWhenNoJshintrcFileInPath: true
   "open-recent": {}
+  pigments:
+    sassShadeAndTintImplementation: "bourbon"
+  "seti-syntax":
+    dynamicColor: false
+    themeColor: "Green"
   "svg-preview":
     openPreviewAutomatically: true
   "tree-view":
+    autoReveal: true
     hideIgnoredNames: true
     hideVcsIgnoredFiles: true
     showOnRightSide: true
