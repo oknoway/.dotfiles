@@ -29,7 +29,7 @@
     invisibles: {}
     showInvisibles: true
   "file-icons":
-    onChanges: true
+    coloured: false
   "fuzzy-finder":
     ignoredNames: [
       "vendor"
