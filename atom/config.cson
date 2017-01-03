@@ -68,3 +68,6 @@
     showIcons: true
   welcome:
     showOnStartup: false
+".gfm.source":
+  whitespace:
+    ensureSingleTrailingNewline: false
