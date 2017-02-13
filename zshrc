@@ -86,6 +86,12 @@ alias usephp70="sudo brew services stop php56; sudo killall php-fpm; brew unlink
 alias usenode6="brew unlink node; brew link node@6 --force";
 alias usenode7="brew unlink node@6; brew link node";
 
+function atom-pipe {
+  ATOM_TEMP=$(mktemp /tmp/atom.XXXX)
+  cat > $ATOM_TEMP
+  atom --wait $ATOM_TEMP
+  rm $ATOM_TEMP
+}
 
 if [[ "$OSTYPE" = darwin* ]]; then
 
