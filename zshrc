@@ -37,7 +37,7 @@ POWERLEVEL9K_BATTERY_DISCONNECTED_BACKGROUND="160"
 POWERLEVEL9K_BATTERY_ICON=$'\uf240 '
 POWERLEVEL9K_RAM_ELEMENTS=(ram_free)
 
-if [ "$TERM_PROGRAM" = "Apple_Terminal" ] || [ "$TERM_PROGRAM" = "iTerm.app" ] ; then
+if [ "$TERM_PROGRAM" = "Apple_Terminal" ] || [ "$TERM_PROGRAM" = "iTerm.app" ] || [ "$TERM_PROGRAM" = "Hyper" ] ; then
 
   POWERLEVEL9K_MODE="awesome-fontconfig"
 
