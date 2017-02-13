@@ -109,10 +109,10 @@ if [[ "$OSTYPE" = darwin* ]]; then
   # brew services alias
   alias service="brew services"
 
-  # brew zsh-completion
-  fpath=(/usr/local/share/zsh-completions $fpath)
 
-  # autocompletion
+  # brew zsh-completion
+  autoload -U +X compinit && compinit
+  fpath=(/usr/local/share/zsh-completions $fpath)
   source /usr/local/share/zsh/site-functions/*
 
   #autojump
@@ -160,7 +160,6 @@ export HISTIGNORE="ls:cd:cd -:pwd:exit:date: * --help";
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(comix iterm-img vmnatdnshost wp certbot4osx autojump aws battery brew brew-cask bower catimg dirhistory frontend-search git git-extras gnu-utils grunt history history-substring-search httpie jump ng node npm osx pass pip python sublime terminalapp textmate vagrant wp-cli yarn z zsh-completions zsh_reload zsh-syntax-highlighting)
 
-autoload -U +X bashcompinit && bashcompinit
 
 source $ZSH/oh-my-zsh.sh
 
