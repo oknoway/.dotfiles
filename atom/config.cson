@@ -22,7 +22,7 @@
     telemetryConsent: "no"
     themes: [
       "native-ui"
-      "pop-rocks-syntax"
+      "atom-dark-syntax"
     ]
   editor:
     fontFamily: "Source Code Pro"
@@ -54,7 +54,7 @@
     sassShadeAndTintImplementation: "bourbon"
   "seti-syntax":
     dynamicColor: false
-    themeColor: "Purple"
+    themeColor: "Green"
   "svg-preview": {}
   "tree-view":
     autoReveal: true
