@@ -22,14 +22,14 @@
     telemetryConsent: "no"
     themes: [
       "native-ui"
-      "seti-syntax"
+      "atom-dark-syntax"
     ]
   editor:
     fontFamily: "Source Code Pro"
     invisibles: {}
     showInvisibles: true
   "file-icons":
-    onChanges: true
+    coloured: false
   "fuzzy-finder":
     ignoredNames: [
       "vendor"
@@ -55,8 +55,7 @@
   "seti-syntax":
     dynamicColor: false
     themeColor: "Green"
-  "svg-preview":
-    openPreviewAutomatically: true
+  "svg-preview": {}
   "tree-view":
     autoReveal: true
     hideIgnoredNames: true
@@ -68,3 +67,6 @@
     showIcons: true
   welcome:
     showOnStartup: false
+".gfm.source":
+  whitespace:
+    ensureSingleTrailingNewline: false

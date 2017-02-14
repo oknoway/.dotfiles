@@ -37,7 +37,7 @@ POWERLEVEL9K_BATTERY_DISCONNECTED_BACKGROUND="160"
 POWERLEVEL9K_BATTERY_ICON=$'\uf240 '
 POWERLEVEL9K_RAM_ELEMENTS=(ram_free)
 
-if [ "$TERM_PROGRAM" = "Apple_Terminal" ] || [ "$TERM_PROGRAM" = "iTerm.app" ] ; then
+if [ "$TERM_PROGRAM" = "Apple_Terminal" ] || [ "$TERM_PROGRAM" = "iTerm.app" ] || [ "$TERM_PROGRAM" = "Hyper" ] ; then
 
   POWERLEVEL9K_MODE="awesome-fontconfig"
 
@@ -83,9 +83,15 @@ alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | printf '=> Public key copied to 
 alias usephp56="sudo brew services stop php70; sudo killall php-fpm; brew unlink php70; brew link php56; sudo brew services start php56";
 alias usephp70="sudo brew services stop php56; sudo killall php-fpm; brew unlink php56; brew link php70; sudo brew services start php70";
 
-alias usenode6="brew unlink node; brew link node@6";
+alias usenode6="brew unlink node; brew link node@6 --force";
 alias usenode7="brew unlink node@6; brew link node";
 
+function atom-pipe {
+  ATOM_TEMP=$(mktemp /tmp/atom.XXXX)
+  cat > $ATOM_TEMP
+  atom --wait $ATOM_TEMP
+  rm $ATOM_TEMP
+}
 
 if [[ "$OSTYPE" = darwin* ]]; then
 
@@ -103,13 +109,16 @@ if [[ "$OSTYPE" = darwin* ]]; then
   #android emulator
   alias droid="~/Library/Android/sdk/tools/emulator -netdelay none -netspeed full -avd Nexus_One_API_15_HWKbd"
 
+  # arcgis vm alias
+  alias arcgisvm="vmnatdnshost "
+
   # brew services alias
   alias service="brew services"
 
-  # brew zsh-completion
-  fpath=(/usr/local/share/zsh-completions $fpath)
 
-  # autocompletion
+  # brew zsh-completion
+  autoload -U +X compinit && compinit
+  fpath=(/usr/local/share/zsh-completions $fpath)
   source /usr/local/share/zsh/site-functions/*
 
   #autojump
@@ -155,9 +164,8 @@ export HISTIGNORE="ls:cd:cd -:pwd:exit:date: * --help";
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(comix iterm-img wp certbot4osx zsh-syntax-highlighting autojump aws battery brew brew-cask bower catimg dirhistory frontend-search git git-extras gnu-utils history history-substring-search httpie jump npm osx pass pip python sublime terminalapp textmate vagrant wp-cli z zsh-completions)
+plugins=(comix iterm-img vmnatdnshost wp certbot4osx autojump aws battery brew brew-cask bower catimg dirhistory frontend-search git git-extras gnu-utils grunt history history-substring-search httpie jump ng node npm osx pass pip python sublime terminalapp textmate vagrant wp-cli yarn z zsh-completions zsh_reload zsh-syntax-highlighting)
 
-autoload -U +X bashcompinit && bashcompinit
 
 source $ZSH/oh-my-zsh.sh
 
@@ -176,12 +184,6 @@ if [[ "$OSTYPE" = darwin* ]]; then
   export HOMEBREW_GITHUB_API_TOKEN=02db06fbbbf9618665195f4ccc50c90bfedeb8fc
   export PYENV_ROOT=/usr/local/var/pyenv
 
-  export NVM_DIR=~/.nvm
-  . $(brew --prefix nvm)/nvm.sh
-
-
-  # source $(brew --prefix nvm)/nvm.sh
-  if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 elif [[ "$OSTYPE" = linux* ]]; then
 

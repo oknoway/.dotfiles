@@ -18,6 +18,11 @@ else
 		mkdir -p "$dir";
 		unrar e -inul "$file" "$dir";
 		zip -0 -j -q "$dir"_fixed."$extension" "$dir"/*.[JjPp][PpNn][Gg];
+<<<<<<< HEAD
+=======
+
+		rm -rf "$dir";
+>>>>>>> origin/master
 
 		rm -rf "$dir";
 		

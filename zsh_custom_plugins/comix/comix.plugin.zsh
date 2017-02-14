@@ -34,8 +34,15 @@ function tagcomix() {
 
   if ${HASTAGS} ; then
     $(tag -a "Comic Tags" $@)
+<<<<<<< HEAD
   else
     $(tag -a "No Comic Tags" $@)
+=======
+    $(tag -r "No Comic Tags" $@)
+  else
+    $(tag -a "No Comic Tags" $@)
+    $(tag -r "Comic Tags" $@)
+>>>>>>> origin/master
   fi
 }
 
