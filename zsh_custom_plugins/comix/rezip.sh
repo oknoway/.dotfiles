@@ -8,12 +8,18 @@ else
 	for file in "$@"
 	do
 
-		filename=$(basename "$fullfile")
+		filename=$(basename "$file")
 		extension="${filename##*.}"
-		# filename="${filename%.*}"
+		dir="${filename%.*}"
 
+		# echo "$filename";
+		# echo "$extension";
 
-		unzip -p "$file" | zip -0 -j -q "$filename"_fixed."$extension" -;
+		mkdir -p "$dir";
+		unrar e -inul "$file" "$dir";
+		zip -0 -j -q "$dir"_fixed."$extension" "$dir"/*.[JjPp][PpNn][Gg];
 
+		rm -rf "$dir";
+		
 	done
 fi

@@ -9,13 +9,13 @@ function rezip() {
 alias comictagger="comictagger.py"
 
 function checktags() {
-  TAGS="$(zsh comictagger -p -t cbl $@)"
+  TAGS="$(comictagger -p -t cbl $@)"
 
   if [ "${TAGS}" == '' ] ; then
-    echo "No tags on $@";
+    #echo "No tags on $@";
     return 1
   else
-    echo "Tags on $@";
+    #echo "Tags on $@";
     return 0
   fi
 }
@@ -23,22 +23,23 @@ function checktags() {
 function tagcomix() {
 
   HASTAGS="$(checktags $@)"
-  if HASTAGS ; then
-    zsh tag -a "Comic Tags" $@
+  if ${HASTAGS} ; then
+    $(tag -a "Comic Tags" $@)
     return
   fi
 
-  zsh comictagger -s --nooverwrite -t cbl -f -o -i -1 -w $@
+  $(comictagger -s --nooverwrite -t cbl -f -o -i -1 -w $@)
 
   HASTAGS="$(checktags $@)"
 
-  if HASTAGS ; then
-    zsh tag -a "Comic Tags" $@
+  if ${HASTAGS} ; then
+    $(tag -a "Comic Tags" $@)
   else
-    zsh tag -a "No Comic Tags" $@
+    $(tag -a "No Comic Tags" $@)
   fi
 }
 
 #alias tagcomix="comictagger -s --nooverwrite -t cbl -f -o -i -1 -w"
 alias renamecomix="comictagger -r -t cbl"
 alias zipcomix="comictagger --export-to-zip --delete-rar"
+
