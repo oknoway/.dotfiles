@@ -3,3 +3,5 @@ tmux/plugins/*
 tmux-client*.log
 
 certbot.log
+
+tmux/resurrect/*
