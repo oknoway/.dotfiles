@@ -45,11 +45,16 @@ fi
 if [ ! -e ~/.gitignore ]; then
   ln -s ~/.dotfiles/gitignore ~/.gitignore
 fi
+
 # iTerm
 if [ ! -e ~/.iterm ]; then
   ln -s ~/.dotfiles/iterm ~/.iterm
 fi
 
+# Hyper
+if [ ! -e ~/.hyper.js ]; then
+  ln -s ~/.dotfiles/hyper.js ~/.hyper.js
+fi
 
 # textmate
 if [ ! -e ~/.tm_properties ]; then

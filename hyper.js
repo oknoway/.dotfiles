@@ -84,6 +84,12 @@ module.exports = {
 
     // for advanced config flags please refer to https://hyper.is/#cfg
 
+    // hyperlinks
+    hyperlinks: {
+      clickAction: 'open',
+      defaultBrowser: true
+    }
+
   },
 
   // a list of plugins to fetch and install from npm
