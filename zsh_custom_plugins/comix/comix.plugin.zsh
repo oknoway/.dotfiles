@@ -34,19 +34,13 @@ function tagcomix() {
 
   if ${HASTAGS} ; then
     $(tag -a "Comic Tags" $@)
-<<<<<<< HEAD
-  else
-    $(tag -a "No Comic Tags" $@)
-=======
     $(tag -r "No Comic Tags" $@)
   else
     $(tag -a "No Comic Tags" $@)
     $(tag -r "Comic Tags" $@)
->>>>>>> origin/master
   fi
 }
 
 #alias tagcomix="comictagger -s --nooverwrite -t cbl -f -o -i -1 -w"
 alias renamecomix="comictagger -r -t cbl"
 alias zipcomix="comictagger --export-to-zip --delete-rar"
-
