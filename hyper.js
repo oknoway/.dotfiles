@@ -108,9 +108,8 @@ module.exports = {
     'hyper-blink',
     'hyperterm-cursor',
     'hyperterm-title',
-    'hyperterm-paste',
     'hyperterm-1password',
-    'hyper-dark-vibrancy'
+    'hyper-snazzy'
   ],
 
   // in development, you can create a directory under
