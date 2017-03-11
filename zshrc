@@ -49,7 +49,7 @@ if [ "$TERM_PROGRAM" = "Apple_Terminal" ] || [ "$TERM_PROGRAM" = "iTerm.app" ] |
   POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %H:%M:%S}"
 
   POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir vcs)
-  POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status battery ram load time)
+  POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status battery ram load time )
 
 else
 
@@ -166,7 +166,6 @@ export HISTIGNORE="ls:cd:cd -:pwd:exit:date: * --help";
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(comix iterm-img vmnatdnshost wp certbot4osx autojump aws battery brew brew-cask bower catimg dirhistory frontend-search git git-extras gnu-utils grunt history history-substring-search httpie jump ng node npm osx pass pip python sublime terminalapp textmate vagrant wp-cli yarn z zsh-completions zsh_reload zsh-syntax-highlighting)
 
-
 source $ZSH/oh-my-zsh.sh
 
 source ~/.zprofile
@@ -184,13 +183,25 @@ if [[ "$OSTYPE" = darwin* ]]; then
   export HOMEBREW_GITHUB_API_TOKEN=02db06fbbbf9618665195f4ccc50c90bfedeb8fc
   export PYENV_ROOT=/usr/local/var/pyenv
 
-
 elif [[ "$OSTYPE" = linux* ]]; then
 
   # Linux constants
   export GISTY_DIR="$HOME/Documents/Source/gists"
   export GISTY_ACCESS_TOKEN=103b1666516255e4254b679cc977331fb89717e4
 
+fi
+
+
+# Locale fixes for Hyper
+if [ "$TERM_PROGRAM" = "Hyper" ] ; then
+  export LANG="en_US.UTF-8"
+  export LC_COLLATE="en_US.UTF-8"
+  export LC_CTYPE="en_US.UTF-8"
+  export LC_MESSAGES="en_US.UTF-8"
+  export LC_MONETARY="en_US.UTF-8"
+  export LC_NUMERIC="en_US.UTF-8"
+  export LC_TIME="en_US.UTF-8"
+  export LC_ALL="en_US.UTF-8"
 fi
 
 # Customize to your needs...
