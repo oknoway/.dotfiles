@@ -10,6 +10,7 @@
       "parcel"
       "grunt-runner"
       "exception-reporting"
+      "bookmarks"
     ]
     ignoredNames: [
       ".sass-cache"
@@ -51,6 +52,7 @@
     disableWhenNoJshintrcFileInPath: true
   "open-recent": {}
   pigments:
+    ignoreVcsIgnoredPaths: false
     sassShadeAndTintImplementation: "bourbon"
   "seti-syntax":
     dynamicColor: false
