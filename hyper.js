@@ -16,12 +16,11 @@ module.exports = {
     foregroundColor: '#fff',
 
     // terminal background color
-    backgroundColor: '#000',
+    backgroundColor: '#1c1f26',
 
     // border color (window, tabs)
-    borderColor: '#333',
+    borderColor: '#a074c4',
 
-    // custom css to embed in the main window
     css: '',
 
     // custom css to embed in the terminal window
@@ -88,8 +87,11 @@ module.exports = {
     hyperlinks: {
       clickAction: 'open',
       defaultBrowser: true
-    }
+    },
 
+    themeOptions: {
+      themeColor: '#a074c4'
+    }
   },
 
   // a list of plugins to fetch and install from npm
@@ -99,18 +101,17 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
   plugins: [
-    //'hyperterm-mactabs',
-    'hyper-autohide-tabs',
+    'seti-hyper',
+    'hyperborder',
     'hyperterm-tab-icons',
+    'hyperterm-bold-tab',
     'hyperlinks',
-    'hyperterm-tabs',
-    'hyperterm-close-on-left',
     'hyper-blink',
-    'hyperterm-cursor',
     'hyperterm-title',
     'hyperterm-1password',
-    'hyper-snazzy'
+    'hyperterm-dibdabs'
   ],
+
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
