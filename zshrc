@@ -176,8 +176,9 @@ if [[ "$OSTYPE" = darwin* ]]; then
   export CODAPATH="/Users/nateb/Applications/Coda\ 2.app:"
   export SVN_EDITOR="atom"
   export GEM_HOME=/usr/local/opt/ruby/bin/
-  export GEM_PATH=/usr/local/opt/ruby/bin/:
+  export GEM_PATH=/usr/local/opt/ruby/bin/
   export NODE_PATH=/usr/local/lib/node_modules
+  export GOPATH=/usr/local/share/go
   export GISTY_DIR="$HOME/Documents/Source/gists"
   export GISTY_ACCESS_TOKEN=103b1666516255e4254b679cc977331fb89717e4
   export HOMEBREW_GITHUB_API_TOKEN=02db06fbbbf9618665195f4ccc50c90bfedeb8fc
@@ -191,7 +192,6 @@ elif [[ "$OSTYPE" = linux* ]]; then
 
 fi
 
-
 # Locale fixes for Hyper
 if [ "$TERM_PROGRAM" = "Hyper" ] ; then
   export LANG="en_US.UTF-8"
@@ -204,7 +204,28 @@ if [ "$TERM_PROGRAM" = "Hyper" ] ; then
   export LC_ALL="en_US.UTF-8"
 fi
 
-# Customize to your needs...
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/include:/usr/local/opt/mysql55/bin:/usr/local/lib/node_modules:/usr/local/share/npm/bin:/usr/local/opt/ruby/bin:/usr/local/opt/ruby/bin/bin:/Library/Developer/CommandLineTools/usr/bin:$HOME/.composer/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:$PATH
+# $PATH: How does it work?
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/include"
+export PATH="$PATH:/opt/X11/bin"
+export PATH="$PATH:/Library/Developer/CommandLineTools/usr/bin"
 
+# Likely installed by a package manager
+export PATH="$PATH:/usr/local/opt/mysql/bin"
+export PATH="$PATH:/usr/local/lib/node_modules"
+export PATH="$PATH:/usr/local/share/npm/bin"
+export PATH="$PATH:/usr/local/opt/ruby/bin"
+export PATH="$PATH:/usr/local/opt/go/libexec/bin"
+export PATH="$PATH:$GOPATH/bin"
+
+# Project Specific
+export PATH="$PATH:./node_modules/.bin"
+
+# $HOME things
+export PATH="$HOME:/.composer/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$PATH"
+
+# These old so-and-so's
+export PATH="$PATH:/usr/bin"
+export PATH="$PATH:/bin"
+export PATH="$PATH:/usr/sbin"
+export PATH="$PATH:/sbin"
