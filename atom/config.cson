@@ -10,7 +10,6 @@
       "parcel"
       "grunt-runner"
       "exception-reporting"
-      "bookmarks"
     ]
     ignoredNames: [
       ".sass-cache"
@@ -22,9 +21,10 @@
     openEmptyEditorOnStart: false
     telemetryConsent: "no"
     themes: [
-      "native-ui"
+      "seti-ui"
       "atom-dark-syntax"
     ]
+    useCustomTitleBar: true
   editor:
     fontFamily: "Source Code Pro"
     invisibles: {}
@@ -52,11 +52,15 @@
     disableWhenNoJshintrcFileInPath: true
   "open-recent": {}
   pigments:
-    ignoreVcsIgnoredPaths: false
     sassShadeAndTintImplementation: "bourbon"
   "seti-syntax":
     dynamicColor: false
     themeColor: "Green"
+  "seti-ui":
+    compactView: true
+    fileIcons: false
+    font: "Default Atom Font"
+    themeColor: "Purple"
   "svg-preview": {}
   "tree-view":
     autoReveal: true
