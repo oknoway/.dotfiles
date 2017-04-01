@@ -1,3 +1,14 @@
+# Force locale for some reason
+export LANG="en_US.UTF-8"
+export LC_COLLATE="en_US.UTF-8"
+export LC_CTYPE="en_US.UTF-8"
+export LC_MESSAGES="en_US.UTF-8"
+export LC_MONETARY="en_US.UTF-8"
+export LC_NUMERIC="en_US.UTF-8"
+export LC_TIME="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -190,18 +201,6 @@ elif [[ "$OSTYPE" = linux* ]]; then
   export GISTY_DIR="$HOME/Documents/Source/gists"
   export GISTY_ACCESS_TOKEN=103b1666516255e4254b679cc977331fb89717e4
 
-fi
-
-# Locale fixes for Hyper
-if [ "$TERM_PROGRAM" = "Hyper" ] ; then
-  export LANG="en_US.UTF-8"
-  export LC_COLLATE="en_US.UTF-8"
-  export LC_CTYPE="en_US.UTF-8"
-  export LC_MESSAGES="en_US.UTF-8"
-  export LC_MONETARY="en_US.UTF-8"
-  export LC_NUMERIC="en_US.UTF-8"
-  export LC_TIME="en_US.UTF-8"
-  export LC_ALL="en_US.UTF-8"
 fi
 
 # $PATH: How does it work?
