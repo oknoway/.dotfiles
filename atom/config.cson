@@ -46,8 +46,7 @@
     ]
   "highlight-line":
     hideHighlightOnSelect: true
-  linter:
-    errorPanelHeight: 24
+  linter: {}
   "linter-jshint":
     disableWhenNoJshintrcFileInPath: true
   "open-recent": {}
