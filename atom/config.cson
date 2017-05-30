@@ -19,12 +19,12 @@
       ".js.map"
     ]
     openEmptyEditorOnStart: false
+    projectHome: "/Users/nate8974/Documents/Source"
     telemetryConsent: "no"
     themes: [
       "seti-ui"
       "atom-dark-syntax"
     ]
-    useCustomTitleBar: true
   editor:
     fontFamily: "Source Code Pro"
     invisibles: {}
@@ -49,6 +49,8 @@
   linter: {}
   "linter-jshint":
     disableWhenNoJshintrcFileInPath: true
+  "linter-ui-default":
+    panelHeight: 56
   "open-recent": {}
   pigments:
     sassShadeAndTintImplementation: "bourbon"
