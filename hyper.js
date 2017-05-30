@@ -24,7 +24,13 @@ module.exports = {
     css: '',
 
     // custom css to embed in the terminal window
-    termCSS: '',
+    termCSS: `
+      .unicode-node {
+        width: auto !important;
+        vertical-align: baseline !important;
+        line-height: 1.29em;
+      }
+    `,
 
     // set to `true` if you're using a Linux set up
     // that doesn't shows native menus
@@ -89,6 +95,11 @@ module.exports = {
       defaultBrowser: true
     },
 
+    // alternate scroll
+    alternateScroll: {
+      scrollSpeed: 80
+    },
+
     themeOptions: {
       themeColor: '#a074c4'
     }
@@ -108,6 +119,7 @@ module.exports = {
     'hyperlinks',
     'hyper-blink',
     'hyperterm-title',
+    'hyperterm-alternatescroll',
     'hyperterm-1password',
     'hyperterm-dibdabs'
   ],
