@@ -29,6 +29,7 @@ POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="black"
 POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND="207"
 POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="black"
 POWERLEVEL9K_DIR_DEFAULT_BACKGROUND="207"
+POWERLEVEL9K_NVM_FOREGROUND="black"
 POWERLEVEL9K_STATUS_VERBOSE=false
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_with_package_name"
 
@@ -59,7 +60,7 @@ if [ "$TERM_PROGRAM" = "Apple_Terminal" ] || [ "$TERM_PROGRAM" = "iTerm.app" ] |
 
   POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %H:%M:%S}"
 
-  POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir vcs)
+  POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir nvm vcs)
   POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status battery ram load time )
 
 else
@@ -71,7 +72,7 @@ else
 
   POWERLEVEL9K_TIME_FORMAT="%D{%H:%M:%S}"
 
-  POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir vcs)
+  POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir nvm vcs)
   POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status battery ram load time)
 
 fi
@@ -126,7 +127,6 @@ if [[ "$OSTYPE" = darwin* ]]; then
   # brew services alias
   alias service="brew services"
 
-
   # brew zsh-completion
   autoload -U +X compinit && compinit
   fpath=(/usr/local/share/zsh-completions $fpath)
@@ -175,7 +175,7 @@ export HISTIGNORE="ls:cd:cd -:pwd:exit:date: * --help";
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(comix iterm-img vmnatdnshost wp certbot4osx autojump aws battery brew brew-cask bower catimg dirhistory frontend-search git git-extras gnu-utils grunt history history-substring-search httpie jump ng node npm osx pass pip python sublime terminalapp textmate vagrant wp-cli yarn z zsh-completions zsh_reload zsh-syntax-highlighting)
+plugins=(comix iterm-img vmnatdnshost wp certbot4osx zsh-nvm nvm autojump aws battery brew brew-cask bower catimg dirhistory frontend-search git git-extras gnu-utils grunt history history-substring-search httpie jump ng node npm osx pass pip python sublime terminalapp textmate vagrant wp-cli yarn z zsh-completions zsh_reload zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -202,6 +202,13 @@ elif [[ "$OSTYPE" = linux* ]]; then
   export GISTY_ACCESS_TOKEN=103b1666516255e4254b679cc977331fb89717e4
 
 fi
+
+# NVM Things
+export NVM_AUTO_USE=true
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 
 # $PATH: How does it work?
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/include"
