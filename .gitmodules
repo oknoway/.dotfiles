@@ -10,3 +10,6 @@
 [submodule "iTerm2-Color-Schemes"]
 	path = iTerm2-Color-Schemes
 	url = git@github.com:mbadolato/iTerm2-Color-Schemes.git
+[submodule "zsh_custom_plugins/zsh-nvm"]
+	path = zsh_custom_plugins/zsh-nvm
+	url = git@github.com:lukechilds/zsh-nvm.git
