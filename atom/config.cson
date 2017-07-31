@@ -1,6 +1,8 @@
 "*":
   core:
+    allowPendingPaneItems: false
     audioBeep: false
+    closeDeletedFileTabs: true
     customFileTypes:
       "source.js": [
         "ts"
@@ -25,8 +27,9 @@
       "seti-ui"
       "atom-dark-syntax"
     ]
+    titleBar: "custom"
   editor:
-    fontFamily: "Source Code Pro"
+    fontFamily: "Hasklig,Source Code Pro"
     invisibles: {}
     showInvisibles: true
   "file-icons":
@@ -44,6 +47,8 @@
     gruntPaths: [
       "/usr/local/bin"
     ]
+  hasklig:
+    fontWeight: "light"
   "highlight-line":
     hideHighlightOnSelect: true
   linter: {}
@@ -54,6 +59,7 @@
   "open-recent": {}
   pigments:
     sassShadeAndTintImplementation: "bourbon"
+  "project-manager": {}
   "seti-syntax":
     dynamicColor: false
     themeColor: "Green"
@@ -66,7 +72,6 @@
   "tree-view":
     autoReveal: true
     hideIgnoredNames: true
-    hideVcsIgnoredFiles: true
     showOnRightSide: true
     sortFoldersBeforeFiles: false
     squashDirectoryNames: true
@@ -74,6 +79,11 @@
     showIcons: true
   welcome:
     showOnStartup: false
+  zentabs:
+    maximumOpenedTabs: 7
+    neverCloseDirty: true
+    neverCloseNew: true
+    neverCloseUnsaved: true
 ".gfm.source":
   whitespace:
     ensureSingleTrailingNewline: false
