@@ -41,6 +41,9 @@
     ]
     preserveLastSearch: true
     useAlternateScoring: true
+  "gist-it":
+    newGistsDefaultToPrivate: true
+    openAfterCreate: true
   "git-diff":
     showIconsInEditorGutter: true
   "grunt-runner":
@@ -59,6 +62,11 @@
   "open-recent": {}
   pigments:
     sassShadeAndTintImplementation: "bourbon"
+  "prettier-atom":
+    formatOnSaveOptions:
+      enabled: true
+      showInStatusBar: true
+    useEslint: true
   "project-manager": {}
   "seti-syntax":
     dynamicColor: false
