@@ -173,6 +173,10 @@ export HISTSIZE=32768;
 export HISTFILESIZE=$HISTSIZE;
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date: * --help";
 
+# NVM Things
+export NVM_LAZY_LOAD=true
+export NVM_AUTO_USE=true
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -185,31 +189,14 @@ source ~/.zprofile
 if [[ "$OSTYPE" = darwin* ]]; then
 
   # Mac Constants
-  export CODAPATH="/Users/nateb/Applications/Coda\ 2.app:"
   export SVN_EDITOR="atom"
   export GEM_HOME=/usr/local/opt/ruby/bin/
   export GEM_PATH=/usr/local/opt/ruby/bin/
   export NODE_PATH=/usr/local/lib/node_modules
   export GOPATH=/usr/local/share/go
-  export GISTY_DIR="$HOME/Documents/Source/gists"
-  export GISTY_ACCESS_TOKEN=103b1666516255e4254b679cc977331fb89717e4
   export HOMEBREW_GITHUB_API_TOKEN=02db06fbbbf9618665195f4ccc50c90bfedeb8fc
   export PYENV_ROOT=/usr/local/var/pyenv
-
-elif [[ "$OSTYPE" = linux* ]]; then
-
-  # Linux constants
-  export GISTY_DIR="$HOME/Documents/Source/gists"
-  export GISTY_ACCESS_TOKEN=103b1666516255e4254b679cc977331fb89717e4
-
 fi
-
-# NVM Things
-export NVM_AUTO_USE=true
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 
 # $PATH: How does it work?
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/include"
