@@ -80,6 +80,7 @@
   "tree-view":
     autoReveal: true
     hideIgnoredNames: true
+    hideVcsIgnoredFiles: true
     showOnRightSide: true
     sortFoldersBeforeFiles: false
     squashDirectoryNames: true
