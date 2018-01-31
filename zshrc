@@ -57,7 +57,7 @@ if [ "$TERM_PROGRAM" = "Apple_Terminal" ] || [ "$TERM_PROGRAM" = "iTerm.app" ] |
   POWERLEVEL9K_PROMPT_ON_NEWLINE=true
   POWERLEVEL9K_RPROMPT_ON_NEWLINE=false
   POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
-  POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="⚡️  "
+  POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="⚡️ "
 
   POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %H:%M:%S}"
 
@@ -93,11 +93,7 @@ alias sass="noglob sass"
 
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | printf '=> Public key copied to pasteboard.\n'";
 
-alias usephp56="sudo brew services stop php71; sudo killall php-fpm; brew unlink php71; brew link php56; sudo brew services start php56";
-alias usephp7="sudo brew services stop php56; sudo killall php-fpm; brew unlink php56; brew link php71; sudo brew services start php71";
-
-alias usenode6="brew unlink node; brew link node@6 --force";
-alias usenode7="brew unlink node@6; brew link node";
+alias apm="apm-beta"
 
 function atom-pipe {
   ATOM_TEMP=$(mktemp /tmp/atom.XXXX)
@@ -176,6 +172,9 @@ export HISTIGNORE="ls:cd:cd -:pwd:exit:date: * --help";
 # NVM Things
 export NVM_LAZY_LOAD=true
 export NVM_AUTO_USE=true
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -196,6 +195,7 @@ if [[ "$OSTYPE" = darwin* ]]; then
   export GOPATH=/usr/local/share/go
   export HOMEBREW_GITHUB_API_TOKEN=02db06fbbbf9618665195f4ccc50c90bfedeb8fc
   export PYENV_ROOT=/usr/local/var/pyenv
+  export NVM_DIR="$HOME/.nvm"
 fi
 
 # $PATH: How does it work?
@@ -207,6 +207,7 @@ export PATH="$PATH:/Library/Developer/CommandLineTools/usr/bin"
 export PATH="$PATH:/usr/local/opt/mysql/bin"
 export PATH="$PATH:/usr/local/lib/node_modules"
 export PATH="$PATH:/usr/local/share/npm/bin"
+export PATH="$PATH:/usr/local/opt/python/libexec/bin"
 export PATH="$PATH:/usr/local/opt/ruby/bin"
 export PATH="$PATH:/usr/local/opt/go/libexec/bin"
 export PATH="$PATH:$GOPATH/bin"
