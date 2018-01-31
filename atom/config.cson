@@ -12,6 +12,8 @@
       "parcel"
       "grunt-runner"
       "exception-reporting"
+      "autocomplete-wordpress-hooks"
+      "linter"
     ]
     ignoredNames: [
       ".sass-cache"
@@ -25,7 +27,7 @@
     telemetryConsent: "no"
     themes: [
       "seti-ui"
-      "atom-dark-syntax"
+      "seti-syntax"
     ]
     titleBar: "custom"
   editor:
@@ -96,3 +98,7 @@
 ".gfm.source":
   whitespace:
     ensureSingleTrailingNewline: false
+".svg.text.xml":
+  editor:
+    softWrap: false
+    softWrapAtPreferredLineLength: true
