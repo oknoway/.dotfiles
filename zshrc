@@ -11,6 +11,7 @@ export LC_ALL="en_US.UTF-8"
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
+ZSH_CUSTOM=$HOME/.dotfiles/zsh_custom
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -57,7 +58,7 @@ if [ "$TERM_PROGRAM" = "Apple_Terminal" ] || [ "$TERM_PROGRAM" = "iTerm.app" ] |
   POWERLEVEL9K_PROMPT_ON_NEWLINE=true
   POWERLEVEL9K_RPROMPT_ON_NEWLINE=false
   POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
-  POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="⚡️ "
+  POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="⚡️  "
 
   POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %H:%M:%S}"
 
@@ -125,9 +126,9 @@ if [[ "$OSTYPE" = darwin* ]]; then
   alias service="brew services"
 
   # brew zsh-completion
-  autoload -U +X compinit && compinit
-  fpath=(/usr/local/share/zsh-completions $fpath)
-  source /usr/local/share/zsh/site-functions/*
+  # autoload -U +X compinit && compinit
+  # fpath=(/usr/local/share/zsh-completions $fpath)
+  # source /usr/local/share/zsh/site-functions/*
 
   #autojump
   [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
@@ -172,18 +173,6 @@ export HISTIGNORE="ls:cd:cd -:pwd:exit:date: * --help";
 # NVM Things
 export NVM_LAZY_LOAD=true
 export NVM_AUTO_USE=true
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(comix iterm-img vmnatdnshost wp certbot4osx zsh-nvm nvm autojump aws battery brew brew-cask bower catimg dirhistory frontend-search git git-extras gnu-utils grunt history history-substring-search httpie jump ng node npm osx pass pip python sublime terminalapp textmate vagrant wp-cli yarn z zsh-completions zsh_reload zsh-syntax-highlighting)
-
-source $ZSH/oh-my-zsh.sh
-
-source ~/.zprofile
 
 if [[ "$OSTYPE" = darwin* ]]; then
 
@@ -224,3 +213,12 @@ export PATH="$PATH:/usr/bin"
 export PATH="$PATH:/bin"
 export PATH="$PATH:/usr/sbin"
 export PATH="$PATH:/sbin"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(comix iterm-img vmnatdnshost wp certbot4osx zsh-nvm nvm autojump aws battery brew brew-cask bower catimg dirhistory frontend-search git git-extras gnu-utils grunt history history-substring-search httpie jump ng node npm osx pass pip python sublime terminalapp textmate vagrant wp-cli yarn z zsh-completions zsh_reload zsh-syntax-highlighting)
+
+source $ZSH/oh-my-zsh.sh
+
+source ~/.zprofile

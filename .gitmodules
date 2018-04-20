@@ -4,12 +4,12 @@
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm
 	url = git@github.com:tmux-plugins/tpm
-[submodule "zsh_custom_themes/powerlevel9k"]
-	path = zsh_custom_themes/powerlevel9k
-	url = git@github.com:bhilburn/powerlevel9k
 [submodule "iTerm2-Color-Schemes"]
 	path = iTerm2-Color-Schemes
 	url = git@github.com:mbadolato/iTerm2-Color-Schemes.git
-[submodule "zsh_custom_plugins/zsh-nvm"]
-	path = zsh_custom_plugins/zsh-nvm
+[submodule "zsh_custom/themes/powerlevel9k"]
+	path = zsh_custom/themes/powerlevel9k
+	url = git@github.com:bhilburn/powerlevel9k.git
+[submodule "zsh_custom/plugins/zsh-nvm"]
+	path = zsh_custom/plugins/zsh-nvm
 	url = git@github.com:lukechilds/zsh-nvm.git

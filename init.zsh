@@ -90,13 +90,3 @@ fi
 if [ ! -e ~/.zshenv ]; then
   ln -s ~/.dotfiles/zshenv ~/.zshenv
 fi
-
-# zsh custom
-mkdir -p ~/.dotfiles/oh-my-zsh/custom
-if [ ! -e ~/.dotfiles/oh-my-zsh/custom/themes ]; then
-  ln -s ~/.dotfiles/zsh_custom_themes ~/.dotfiles/oh-my-zsh/custom/themes
-fi
-
-if [ ! -e ~/.dotfiles/oh-my-zsh/custom/plugins ]; then
-  ln -s ~/.dotfiles/zsh_custom_plugins ~/.dotfiles/oh-my-zsh/custom/plugins
-fi
