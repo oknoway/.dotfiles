@@ -28,8 +28,15 @@ module.exports = {
 
     // custom css to embed in the terminal window
     termCSS: `
-      .terminal {font-weight: lighter;}
-      .terminal .xterm-bold {font-weight: normal;}
+      .unicode-node {
+        width: auto !important;
+        vertical-align: baseline !important;
+        line-height: 1.29em;
+
+        outline: 3px dashed red;
+      }
+
+      .terminal {font-weight: lighter;} .terminal .xterm-bold {font-weight: normal;}
     `,
 
     // set to `true` if you're using a Linux set up
@@ -43,7 +50,7 @@ module.exports = {
     showWindowControls: "",
 
     // custom padding (css format, i.e.: `top right bottom left`)
-    padding: "0",
+    padding: "2px",
 
     // the full list. if you're going to provide the full color palette,
     // including the 6 x 6 color cubes and the grayscale map, just provide
