@@ -22,8 +22,8 @@ do
     VBoxManage modifyvm "$name" --natdnshostresolver1 on
     #VBoxManage setextradata "$name" "VBoxInternal/Devices/e1000/0/LUN#0/Config/HostResolverMappings/mysite/HostIP" "$1"
     #VBoxManage setextradata "$name" "VBoxInternal/Devices/e1000/0/LUN#0/Config/HostResolverMappings/mysite/HostNamePattern" "$2"
-    VBoxManage setextradata "$name" "VBoxInternal/Devices/e1000/0/LUN#0/Config/HostResolverMappings/mysite/HostIP" "10.195.27.179"
-    #VBoxManage setextradata "$name" "VBoxInternal/Devices/e1000/0/LUN#0/Config/HostResolverMappings/mysite/HostIP" "10.0.1.45"
+    VBoxManage setextradata "$name" "VBoxInternal/Devices/e1000/0/LUN#0/Config/HostResolverMappings/mysite/HostIP" "10.195.27.26"
+    #VBoxManage setextradata "$name" "VBoxInternal/Devices/e1000/0/LUN#0/Config/HostResolverMappings/mysite/HostIP" "10.0.1.47"
     VBoxManage setextradata "$name" "VBoxInternal/Devices/e1000/0/LUN#0/Config/HostResolverMappings/mysite/HostNamePattern" "local.arcgis.com"
   fi
 done

@@ -1,11 +1,11 @@
 function pullprod() {
-  zsh $ZSH/custom/plugins/wp/pullprod.zsh $@
+  zsh $ZSH_CUSTOM/plugins/wp/pullprod.zsh $@
 }
 
 function wpdbdump() {
-  zsh $ZSH/custom/plugins/wp/wpdbdump.zsh $@
+  zsh $ZSH_CUSTOM/plugins/wp/wpdbdump.zsh $@
 }
 
 function wpdbrestore() {
-  zsh $ZSH/custom/plugins/wp/wpdbrestore.zsh $@
+  zsh $ZSH_CUSTOM/plugins/wp/wpdbrestore.zsh $@
 }

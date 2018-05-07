@@ -1,9 +1,9 @@
 function cbr2cbz() {
-  zsh $ZSH/custom/plugins/comix/cbr2cbz.sh $@
+  zsh $ZSH_CUSTOM/plugins/comix/cbr2cbz.sh $@
 }
 
 function rezip() {
-  zsh $ZSH/custom/plugins/comix/rezip.sh $@
+  zsh $ZSH_CUSTOM/plugins/comix/rezip.sh $@
 }
 
 alias comictagger="comictagger.py"

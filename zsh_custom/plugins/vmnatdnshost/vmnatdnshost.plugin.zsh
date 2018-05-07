@@ -1,5 +1,5 @@
 function vmnatdnshost() {
-  zsh $ZSH/custom/plugins/vmnatdnshost/vmnatdnshost.sh $@
+  zsh $ZSH_CUSTOM/plugins/vmnatdnshost/vmnatdnshost.sh $@
 }
 
 function myip() {
