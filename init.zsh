@@ -66,6 +66,11 @@ if [ ! -e ~/.multitailrc ]; then
   ln -s ~/.dotfiles/multitailrc ~/.multitailrc
 fi
 
+# curl
+if [ ! -e ~/.curlrc ]; then
+  ln -s ~/.dotfiles/curlrc ~/.curlrc
+fi
+
 # wp-cli
 if [ ! -e ~/.wp-cli/config.yml ]; then
   ln -s ~/.dotfiles/wp-cli.config.yml ~/.wp-cli/config.yml
