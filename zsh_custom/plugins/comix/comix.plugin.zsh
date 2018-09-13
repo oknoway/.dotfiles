@@ -6,6 +6,14 @@ function rezip() {
   zsh $ZSH_CUSTOM/plugins/comix/rezip.sh $@
 }
 
+function jpegs2cbz() {
+  zsh $ZSH_CUSTOM/plugins/comix/jpegs2cbz.sh $@
+}
+
+function fl() {
+  zsh $ZSH_CUSTOM/plugins/comix/firstlast.zsh $@
+}
+
 alias comictagger="comictagger.py"
 
 function checktags() {
