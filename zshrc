@@ -96,6 +96,8 @@ alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | printf '=> Public key copied to 
 
 alias apm="apm-beta"
 
+autoload zmv
+
 function atom-pipe {
   ATOM_TEMP=$(mktemp /tmp/atom.XXXX)
   cat > $ATOM_TEMP
@@ -171,13 +173,13 @@ export HISTFILESIZE=$HISTSIZE;
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date: * --help";
 
 # NVM Things
-export NVM_LAZY_LOAD=true
+export NVM_LAZY_LOAD=false
 export NVM_AUTO_USE=true
 
 if [[ "$OSTYPE" = darwin* ]]; then
 
   # Mac Constants
-  export SVN_EDITOR="atom"
+  export SVN_EDITOR="atom-beta"
   export GEM_HOME=/usr/local/opt/ruby/bin/
   export GEM_PATH=/usr/local/opt/ruby/bin/
   export NODE_PATH=/usr/local/lib/node_modules
@@ -217,7 +219,7 @@ export PATH="$PATH:/sbin"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(comix iterm-img vmnatdnshost wp certbot4osx zsh-nvm nvm autojump aws battery brew brew-cask bower catimg dirhistory frontend-search git git-extras gnu-utils grunt history history-substring-search httpie jump ng node npm osx pass pip python sublime terminalapp textmate vagrant wp-cli yarn z zsh-completions zsh_reload zsh-syntax-highlighting)
+plugins=(certbot4osx comix gif-from-tweet iterm-img vmnatdnshost wp zsh-nvm nvm autojump aws battery brew brew-cask bower catimg dirhistory frontend-search git git-extras gnu-utils grunt history history-substring-search httpie jump ng node npm osx pass pip python sublime terminalapp textmate vagrant wp-cli yarn z zsh-completions zsh_reload zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
