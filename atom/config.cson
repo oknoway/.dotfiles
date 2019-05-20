@@ -66,18 +66,27 @@
     panelHeight: 56
   "open-recent": {}
   pigments:
+    dismissableReloadNotifications: false
+    notifyReloads: false
     sassShadeAndTintImplementation: "bourbon"
   "prettier-atom":
     formatOnSaveOptions:
       enabled: true
       showInStatusBar: true
     useEslint: true
-  "project-manager": {}
+  "project-manager":
+    alwaysOpenInSameWindow: true
+    environmentSpecificProjects: true
+    showPath: false
+    sortBy: "group"
+  "project-plus":
+    notifications: false
   "seti-syntax":
     dynamicColor: false
     themeColor: "Green"
   "seti-ui":
     compactView: true
+    displayIgnored: false
     fileIcons: false
     font: "Default Atom Font"
     themeColor: "Purple"
