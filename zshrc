@@ -181,7 +181,7 @@ if [[ "$OSTYPE" = darwin* ]]; then
   export GEM_PATH=/usr/local/opt/ruby/bin/
   export NODE_PATH=/usr/local/lib/node_modules
   export GOPATH=/usr/local/share/go
-  export HOMEBREW_GITHUB_API_TOKEN=02db06fbbbf9618665195f4ccc50c90bfedeb8fc
+  export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
   export PYENV_ROOT=/usr/local/var/pyenv
   export NVM_DIR="$HOME/.nvm"
 fi
