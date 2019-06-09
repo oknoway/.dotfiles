@@ -91,8 +91,6 @@ alias sass="noglob sass"
 
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | printf '=> Public key copied to pasteboard.\n'";
 
-alias apm="apm-beta"
-
 autoload zmv
 
 function atom-pipe {
@@ -176,7 +174,7 @@ export NVM_AUTO_USE=true
 if [[ "$OSTYPE" = darwin* ]]; then
 
   # Mac Constants
-  export SVN_EDITOR="atom-beta"
+  export SVN_EDITOR="atom"
   export GEM_HOME=/usr/local/opt/ruby/bin/
   export GEM_PATH=/usr/local/opt/ruby/bin/
   export NODE_PATH=/usr/local/lib/node_modules
