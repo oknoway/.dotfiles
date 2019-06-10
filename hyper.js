@@ -28,15 +28,6 @@ module.exports = {
 
     // custom css to embed in the terminal window
     termCSS: `
-      .unicode-node {
-        width: auto !important;
-        vertical-align: baseline !important;
-        line-height: 1.29em;
-
-        outline: 3px dashed red;
-      }
-
-      .terminal {font-weight: lighter;} .terminal .xterm-bold {font-weight: normal;}
     `,
 
     // set to `true` if you're using a Linux set up
@@ -119,7 +110,7 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
   plugins: [
-    "seti-hyper",
+    "hyper-dracula",
     "hyperborder",
     "hyperterm-tab-icons",
     "hyperterm-bold-tab",
@@ -127,7 +118,9 @@ module.exports = {
     "hyper-blink",
     "hyperterm-title",
     "hyperterm-1password",
-    "hyperterm-dibdabs"
+    "hyperterm-dibdabs",
+    "hyper-fading-scrollbar",
+    "hyper-confirm-quit"
   ],
 
   // in development, you can create a directory under

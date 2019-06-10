@@ -13,6 +13,16 @@ if [ -z "$1" ]; then
   echo "    vmnatdnshost IP HostNamePattern";
 fi
 
+# The package iproute2mac is needed to get the current IP in use
+ip=$(ip route get 8.8.8.8 || echo "ERROR")
+if [ "$ip" = "ERROR" ]; then
+  echo "Install iproute2mac via homebrew to run this script."
+  exit 1
+fi
+ip="$(echo $ip | awk '{print $NF;exit}')"
+echo "IP: $ip"
+
+
 VBoxManage list vms | grep Win | sed 's/"\(.*\)".*/\1/' | while read name
 do
   VBoxManage getextradata "$name" enumerate | grep ievms &> /dev/null
@@ -22,8 +32,7 @@ do
     VBoxManage modifyvm "$name" --natdnshostresolver1 on
     #VBoxManage setextradata "$name" "VBoxInternal/Devices/e1000/0/LUN#0/Config/HostResolverMappings/mysite/HostIP" "$1"
     #VBoxManage setextradata "$name" "VBoxInternal/Devices/e1000/0/LUN#0/Config/HostResolverMappings/mysite/HostNamePattern" "$2"
-    VBoxManage setextradata "$name" "VBoxInternal/Devices/e1000/0/LUN#0/Config/HostResolverMappings/mysite/HostIP" "10.195.27.26"
-    #VBoxManage setextradata "$name" "VBoxInternal/Devices/e1000/0/LUN#0/Config/HostResolverMappings/mysite/HostIP" "10.0.1.47"
+    VBoxManage setextradata "$name" "VBoxInternal/Devices/e1000/0/LUN#0/Config/HostResolverMappings/mysite/HostIP" "$ip"
     VBoxManage setextradata "$name" "VBoxInternal/Devices/e1000/0/LUN#0/Config/HostResolverMappings/mysite/HostNamePattern" "local.arcgis.com"
   fi
 done
