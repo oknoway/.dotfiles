@@ -218,7 +218,7 @@ export PATH="$PATH:/sbin"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(certbot4osx comix gif-from-tweet iterm-img vmnatdnshost wp zsh-nvm nvm autojump aws battery brew bower catimg dirhistory frontend-search git git-extras gnu-utils grunt history history-substring-search httpie jump ng node npm osx pip python sublime terminalapp textmate wp-cli yarn z zsh_reload)
+plugins=(certbot4osx comix gif-from-tweet iterm-img vmnatdnshost wp zsh-nvm nvm autojump aws battery brew bower catimg dirhistory frontend-search git git-extras gnu-utils grunt history history-substring-search httpie iterm2 jump ng node npm osx pip python sublime textmate wp-cli yarn z zsh_reload)
 
 source $ZSH/oh-my-zsh.sh
 
