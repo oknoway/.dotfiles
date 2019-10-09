@@ -8,7 +8,6 @@ export LC_NUMERIC="en_US.UTF-8"
 export LC_TIME="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
-
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 ZSH_CUSTOM=$HOME/.dotfiles/zsh_custom
@@ -18,7 +17,6 @@ ZSH_CUSTOM=$HOME/.dotfiles/zsh_custom
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 # ZSH_THEME="oknoway"
-
 
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 
@@ -52,7 +50,19 @@ POWERLEVEL9K_BATTERY_ICON=$'\uf240 '
 POWERLEVEL9K_RAM_ELEMENTS=(ram_free)
 POWERLEVEL9K_TIME_FORMAT="%D{%H:%M:%S}"
 
-if [ "$TERM_PROGRAM" = "Apple_Terminal" ] || [ "$TERM_PROGRAM" = "iTerm.app" ] || [ "$TERM_PROGRAM" = "Hyper" ] ; then
+if [ "$TERM_PROGRAM" = "iTerm.app" ]; then
+  POWERLEVEL9K_MODE="awesome-fontconfig"
+
+  POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context nvm)
+  POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status battery ram load time)
+
+elif [ "$TERM_PROGRAM" = "platformio-ide-terminal" ]; then
+  POWERLEVEL9K_MODE="compatibile"
+
+  POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir nvm vcs)
+  POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
+
+elif [ "$TERM_PROGRAM" = "Apple_Terminal" ] || [ "$TERM_PROGRAM" = "Hyper" ] ; then
 
   POWERLEVEL9K_MODE="awesome-fontconfig"
 
@@ -71,8 +81,8 @@ else
   POWERLEVEL9K_PROMPT_ON_NEWLINE=false
   POWERLEVEL9K_RPROMPT_ON_NEWLINE=false
 
-  POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir nvm vcs)
-  POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status battery ram load time)
+  POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir nvm vcs)
+  POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
 
 fi
 
@@ -89,16 +99,9 @@ alias bower="noglob bower"
 alias npm="noglob npm"
 alias sass="noglob sass"
 
-alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | printf '=> Public key copied to pasteboard.\n'";
+alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | printf '📋Public key copied to pasteboard.\n'";
 
 autoload zmv
-
-function atom-pipe {
-  ATOM_TEMP=$(mktemp /tmp/atom.XXXX)
-  cat > $ATOM_TEMP
-  atom --wait $ATOM_TEMP
-  rm $ATOM_TEMP
-}
 
 if [[ "$OSTYPE" = darwin* ]]; then
 
@@ -112,9 +115,6 @@ if [[ "$OSTYPE" = darwin* ]]; then
   cdf() {
     cd "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`"
   }
-
-  #android emulator
-  alias droid="~/Library/Android/sdk/tools/emulator -netdelay none -netspeed full -avd Nexus_One_API_15_HWKbd"
 
   # arcgis vm alias
   alias arcgisvm="vmnatdnshost "
@@ -170,6 +170,10 @@ export HISTIGNORE="ls:cd:cd -:pwd:exit:date: * --help";
 # NVM Things
 export NVM_LAZY_LOAD=false
 export NVM_AUTO_USE=true
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 if [[ "$OSTYPE" = darwin* ]]; then
 
