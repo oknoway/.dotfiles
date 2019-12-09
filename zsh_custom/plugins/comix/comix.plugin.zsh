@@ -14,8 +14,6 @@ function fl() {
   zsh $ZSH_CUSTOM/plugins/comix/firstlast.zsh $@
 }
 
-alias comictagger="comictagger.py"
-
 function checktags() {
   TAGS="$(comictagger -p -t cbl $@)"
 
