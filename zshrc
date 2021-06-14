@@ -88,7 +88,7 @@ fi
 
 export DEFAULT_USER="$USER"
 
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -187,33 +187,6 @@ if [[ "$OSTYPE" = darwin* ]]; then
   export PYENV_ROOT=/usr/local/var/pyenv
   export NVM_DIR="$HOME/.nvm"
 fi
-
-# $PATH: How does it work?
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/include"
-export PATH="$PATH:/opt/X11/bin"
-export PATH="$PATH:/Library/Developer/CommandLineTools/usr/bin"
-
-# Likely installed by a package manager
-export PATH="$PATH:/usr/local/opt/mysql/bin"
-export PATH="$PATH:/usr/local/lib/node_modules"
-export PATH="$PATH:/usr/local/share/npm/bin"
-export PATH="$PATH:/usr/local/opt/python/libexec/bin"
-export PATH="$PATH:/usr/local/opt/ruby/bin"
-export PATH="$PATH:/usr/local/opt/go/libexec/bin"
-export PATH="$PATH:$GOPATH/bin"
-
-# Project Specific
-export PATH="$PATH:./node_modules/.bin"
-
-# $HOME things
-export PATH="$HOME:/.composer/bin:$PATH"
-export PATH="$HOME/.yarn/bin:$PATH"
-
-# These old so-and-so's
-export PATH="$PATH:/usr/bin"
-export PATH="$PATH:/bin"
-export PATH="$PATH:/usr/sbin"
-export PATH="$PATH:/sbin"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/

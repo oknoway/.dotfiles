@@ -88,6 +88,10 @@ if [ ! -e ~/.oh-my-zsh ]; then
   ln -s ~/.dotfiles/oh-my-zsh ~/.oh-my-zsh
 fi
 
+if [ ! -e ~/.zprofile ]; then
+  ln -s ~/.dotfiles/zprofile ~/.zprofile
+fi
+
 if [ ! -e ~/.zshrc ]; then
   ln -s ~/.dotfiles/zshrc ~/.zshrc
 fi
