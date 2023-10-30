@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 if [ -z "$1" ]; then
 	echo "Convert cbr file to cbz file.";

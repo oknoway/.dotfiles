@@ -16,111 +16,24 @@ ZSH_CUSTOM=$HOME/.dotfiles/zsh_custom
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-# ZSH_THEME="oknoway"
 
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+# export DEFAULT_USER="$USER"
 
-POWERLEVEL9K_OS_ICON_BACKGROUND="blue"
-POWERLEVEL9K_OS_ICON_FOREGROUND="black"
-POWERLEVEL9K_DIR_HOME_FOREGROUND="black"
-POWERLEVEL9K_DIR_HOME_BACKGROUND="207"
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="black"
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND="207"
-POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="black"
-POWERLEVEL9K_DIR_DEFAULT_BACKGROUND="207"
-POWERLEVEL9K_NVM_FOREGROUND="black"
-POWERLEVEL9K_NVM_BACKGROUND="045"
-POWERLEVEL9K_STATUS_VERBOSE=false
-POWERLEVEL9K_SHORTEN_STRATEGY="truncate_with_package_name"
-
-POWERLEVEL9K_SHOW_CHANGESET=false
-POWERLEVEL9K_VCS_SHOW_SUBMODULE_DIRTY=false
-POWERLEVEL9K_VCS_HIDE_TAGS=true
-
-POWERLEVEL9K_BATTERY_VERBOSE=false
-POWERLEVEL9K_BATTERY_LOW_FOREGROUND="black"
-POWERLEVEL9K_BATTERY_LOW_BACKGROUND="160"
-POWERLEVEL9K_BATTERY_CHARGING_FOREGROUND="black"
-POWERLEVEL9K_BATTERY_CHARGING_BACKGROUND="047"
-POWERLEVEL9K_BATTERY_CHARGED_FOREGROUND="black"
-POWERLEVEL9K_BATTERY_CHARGED_BACKGROUND="047"
-POWERLEVEL9K_BATTERY_DISCONNECTED_FOREGROUND="black"
-POWERLEVEL9K_BATTERY_DISCONNECTED_BACKGROUND="160"
-POWERLEVEL9K_BATTERY_ICON=$'\uf240 '
-POWERLEVEL9K_RAM_ELEMENTS=(ram_free)
-POWERLEVEL9K_TIME_FORMAT="%D{%H:%M:%S}"
-
-if [ "$TERM_PROGRAM" = "iTerm.app" ]; then
-  POWERLEVEL9K_MODE="awesome-fontconfig"
-
-  POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context nvm)
-  POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status battery ram load time)
-
-elif [ "$TERM_PROGRAM" = "platformio-ide-terminal" ]; then
-  POWERLEVEL9K_MODE="compatibile"
-
-  POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir nvm vcs)
-  POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
-
-elif [ "$TERM_PROGRAM" = "Apple_Terminal" ] || [ "$TERM_PROGRAM" = "Hyper" ] ; then
-
-  POWERLEVEL9K_MODE="awesome-fontconfig"
-
-  POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-  POWERLEVEL9K_RPROMPT_ON_NEWLINE=false
-  POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
-  POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="⚡️"
-
-  POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir nvm vcs)
-  POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status battery ram load time)
-
-else
-
-  POWERLEVEL9K_MODE="compatibile"
-
-  POWERLEVEL9K_PROMPT_ON_NEWLINE=false
-  POWERLEVEL9K_RPROMPT_ON_NEWLINE=false
-
-  POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir nvm vcs)
-  POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
-
-fi
-
-export DEFAULT_USER="$USER"
-
-ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias scp="noglob scp"
-alias bower="noglob bower"
 alias npm="noglob npm"
 alias sass="noglob sass"
 
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | printf '📋Public key copied to pasteboard.\n'";
 
-autoload zmv
-
-if [[ "$OSTYPE" = darwin* ]]; then
+# autoload zmv
 
   # colorize ls
   alias ls="ls -AGlh"
-
-  # Repair LaunchServices
-  alias fixopenwith="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user"
-
-  # cd to active Finder window
-  cdf() {
-    cd "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`"
-  }
-
-  # arcgis vm alias
-  alias arcgisvm="vmnatdnshost "
-
-  # brew services alias
-  alias service="brew services"
 
   # brew zsh-completion
   # autoload -U +X compinit && compinit
@@ -128,21 +41,8 @@ if [[ "$OSTYPE" = darwin* ]]; then
   # source /usr/local/share/zsh/site-functions/*
 
   #autojump
-  [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+  # [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
-elif [[ "$OSTYPE" = linux* ]]; then
-  alias update='sudo apt-get update'
-  alias upgrade='sudo apt-get upgrade'
-  alias aptdate='sudo aptitude update'
-  alias aptgrade='sudo aptitude upgrade'
-
-  # colorize ls
-  alias ls="ls -Alh"
-
-  # s/mate/rmate
-  alias mate="rmate"
-
-fi
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -167,14 +67,6 @@ export HISTSIZE=32768;
 export HISTFILESIZE=$HISTSIZE;
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date: * --help";
 
-# NVM Things
-export NVM_LAZY_LOAD=false
-export NVM_AUTO_USE=true
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 if [[ "$OSTYPE" = darwin* ]]; then
 
   # Mac Constants
@@ -185,14 +77,23 @@ if [[ "$OSTYPE" = darwin* ]]; then
   export GOPATH=/usr/local/share/go
   export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
   export PYENV_ROOT=/usr/local/var/pyenv
-  export NVM_DIR="$HOME/.nvm"
 fi
+
+if [[ $TERM_PROGRAM != "WarpTerminal" ]]; then
+ZSH_THEME="spaceship-prompt/spaceship"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(certbot4osx comix gif-from-tweet iterm-img vmnatdnshost wp zsh-nvm nvm autojump aws battery brew bower catimg dirhistory frontend-search git git-extras gnu-utils grunt history history-substring-search httpie iterm2 jump ng node npm osx pip python sublime textmate wp-cli yarn z zsh_reload)
+plugins=(certbot4osx comix gif-from-tweet iterm-img vmnatdnshost zsh-autosuggestions autojump  battery brew catimg dirhistory frontend-search git git-extras gnu-utils history history-substring-search httpie iterm2 jump ng node npm macos pip python yarn z)
+
+else
+  ZSH_THEME="agnoster"
+  plugins=(certbot4osx comix gif-from-tweet iterm-img vmnatdnshost zsh-autosuggestions autojump  battery brew catimg dirhistory frontend-search git git-extras gnu-utils history history-substring-search httpie iterm2 jump ng node npm macos pip python yarn z)
+
+fi
 
 source $ZSH/oh-my-zsh.sh
+
 
 source ~/.zprofile
